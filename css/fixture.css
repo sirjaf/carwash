@@ -1,0 +1,23 @@
+input {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+input[type=button] {
+    width: 25%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+#wrapper {
+    width: 100%;
+    text-align: center;
+    border: 0px solid royalblue;
+}
+
+form {
+    display: inline-block;
+    margin: auto;
+    text-align: left;
+    align-self: center;
+}

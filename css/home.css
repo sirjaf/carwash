@@ -1,0 +1,515 @@
+table {
+    table-layout:fixed;
+    /*max-width: 800px;*/
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid green;
+    font-size: 11px;
+    font-family: 'Tahoma', 'Geneva', 'sans-serif';
+    /*overflow: scroll;*/
+}
+
+.leagues {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    padding-top: 5px;
+}
+
+td a {
+    text-decoration: none;
+    color: black;
+}
+
+td a:hover {
+    color: green;
+    font-weight: normal;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type=button] {
+    width: 25%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+input[type=checkbox] {
+    background: green;
+}
+
+#div-Add{
+  display:block;
+
+}
+.clearfixx{
+  overflow: auto;
+}
+#search {
+  float: right;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 5px;
+
+}
+
+.searchResult{
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#wrapper {
+    width: 100%;
+    border: 0 solid #448aff;
+}
+
+form {
+    display: inline-block;
+    align-self: center;
+    margin: auto;
+    text-align: left;
+}
+.div-forms{
+    text-align: center;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: row;
+  /* background-color: black; */
+  /*border: 1px green solid;*/
+}
+
+.club-crest-search {
+  width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+  
+}
+
+#team_crest {
+  /*width: 50%;*/
+  width: 100px;
+  height: 100px;
+}
+
+.admin-div {
+    font-weight: bold;
+}
+
+.admin-div a {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
+
+.admin-div a:hover {
+    text-decoration: none;
+    color: white;
+    background-color: green;
+}
+
+#content-table{
+    width: 100%;
+}
+
+.delete {
+    color: red;
+}
+
+.delete:hover {
+    color: lightcoral;
+}
+
+.btn {
+    text-decoration: none;
+    border: 1px solid green;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    background-color: green;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: black;
+    border-color: black;
+    color: white;
+}
+
+.btnDel {
+    text-decoration: none;
+    border: 1px solid red;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    border-radius: 5px;
+}
+
+.btnDel:hover {
+    background-color: lightcoral;
+    border-color: lightcoral;
+    color: white;
+}
+
+.btnsearch{
+  float: right;
+  font-size:13px;
+  margin-right:10px;
+}
+
+.inlineview{
+  display: inline-block;
+}
+
+#info {
+
+}
+
+#pagination {
+  margin-top: auto;
+  /*overflow:scroll;
+  overflow-y:auto;
+  overflow-x:auto;*/
+
+}
+#pagination li{
+  display: inline-block;
+  margin: 0 5px;
+}
+#pagination li a{
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px 12px;
+  color: black;
+}
+#pagination li a:hover{
+  background-color: green;
+  color: white;
+
+}
+
+#pagination li .active {
+  background-color: green;
+  color: white;
+
+}
+.cpagination {
+  display: inline-block;
+
+}
+
+#messagewarning {
+  align-items: center;
+  border: 1px solid #d50000;
+  color: white;
+  overflow: auto;
+  overflow: hidden;
+}
+
+#messagewarning p {
+  color: black;
+  font-size: 12px;
+}
+
+
+.titlewarning  {
+  background-color: #d50000;
+}
+
+#messagesuccess {
+  align-items: center;
+  border: 1px solid #00c853;
+  color: white;
+  overflow: auto;
+  overflow: hidden;
+}
+
+#messagesuccess p {
+  color: black;
+  font-size: 12px;
+}
+
+#messagedeleted {
+  align-items: center;
+  border: 1px solid #d50000;
+  color: white;
+  overflow: auto;
+  overflow: hidden;
+}
+
+#messagedeleted p {
+  color: black;
+  font-size: 12px;
+}
+
+.titlesuccess  {
+  background-color: #00c853;
+}
+
+.titledelete  {
+  background-color: #d50000;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 11px;
+    font-weight: bold;
+    width: auto;
+
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#sitename a{
+    text-decoration: none;
+    color: white;
+}
+
+#mobile-menu {
+   display:none;
+
+}
+
+.myfixture{
+    width: auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 10px 10px 50px #d2d2d2;
+    border-radius: 5px;
+    border: 1px solid grey;
+    
+
+}
+.fixflexA{
+    flex-basis: 35%;
+    text-align: center;
+
+}
+.fixflexB{
+    flex-basis: 35%;
+    text-align: center;
+}
+.fixflexDate{
+    flex-basis: 30%;
+    text-align: center;
+    background-color: green;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.push-span{
+    background-color:green;
+
+}
+
+span {
+    display: inline;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+   /* background-color: #64b5f6;*/
+    width: auto;
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+.myspan {
+    font-weight: normal;
+    font-size: 12px;
+    
+}
+
+.teamSpan{
+  margin-left: 50%;
+}
+
+.mydisplay{
+  display: flex;
+  
+  /* justify-content: space-between; */
+}
+
+.mydisplay p{
+  margin-right: 10px;
+}
+
+/*Media Queries*/
+
+@media screen and (max-width: 600px) {
+
+
+  .footer {
+    color: white;
+    display: block;
+  }
+
+   .sidebar-col{
+    float: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    background-color: white;
+    border-left: 0px;
+    color: black;
+    padding-bottom: 20px;
+
+  }
+ .main-col{
+   width: 100%;
+    }
+
+    .billboard {
+        /* background-color: #64b5f6; */
+        color: white;
+        text-align: center;
+        padding: 60px;
+        height:195px;
+        /*margin-top: 20.4px;*/
+        background-image: url("/images/billboardmobile.png");
+        background-repeat: no-repeat;
+    }
+
+ table{
+     table-layout: fixed;
+     	display: block;
+      width: 100%;
+      font-weight: normal;
+
+ }
+ thead, tbody, th, td, tr {
+	 	display: block;
+	}
+th{
+  display: none;
+}
+/*th tr {
+  		position: absolute;
+  		top: -9999px;
+  		left: -9999px;
+  	}*/
+tr { border: 1px solid #ccc; }
+
+td {
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		/*padding-left: 10%;*/
+	}
+
+#mobile-menu {
+   display:block;
+   /*margin-left:auto;*/
+   /*margin-right:0;*/
+   float:right;
+   background-color: green;
+}
+.main-nav {
+    display: none;
+}
+.spanLeague{
+    width: 100%;
+}
+
+#search {
+  float: none;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  margin-top: 10px;
+
+}
+.btnsearch{
+  float: none;
+  font-size:12px;
+  /* margin-right:10px; */
+}
+
+.teamSpan{
+  margin-left: 30%;
+}
+
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /*background-color: black;*/
+  /*border: 1px green solid;*/
+}
+  
+.club-crest-search {
+  width: 300px;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+#team_crest {
+  /*width: 50%;*/
+  /* width: 100px;
+  height: 100px; */
+}
+
+/*
+  td:before {
+  		/* Now like a table header */
+  		/*position: absolute;*/
+  		/* Top/left values mimic padding */
+  		/*top: 6px;
+  		left: 6px;
+  		width: 45%;
+  		padding-right: 10px;
+  		white-space: nowrap;
+  	}*/
+
+      /*#fixtures td:nth-of-type(1):before { content: "Fixture";  font-weight: bold; }
+    	#fixtures td:nth-of-type(2):before { content: "Tournament";   font-weight: bold;}
+    	#fixtures td:nth-of-type(3):before { content: "Country/Region";   font-weight: bold;}
+    	#fixtures td:nth-of-type(4):before { content: "Date";   font-weight: bold;}
+    	#fixtures td:nth-of-type(5):before { content: "Time";   font-weight: bold;}
+    	#fixtures td:nth-of-type(6):before { content: "Price";   font-weight: bold;}
+    	#fixtures td:nth-of-type(7):before { content: "Actions";   font-weight: bold;}*/
+
+
+}

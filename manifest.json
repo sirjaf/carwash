@@ -1,0 +1,56 @@
+{
+  "lang": "en",
+  "name": "Dawaki Viewing Center",
+  "short_name": "Dawaki VC",
+  "description": "Web App for seeing which matches will be shown by Dawaki Viewing Center",
+  "theme_color": "#008000",
+  "background_color": "#008000",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": ".",
+  "gcm_sender_id": "300013155679",
+  "gcm_user_visible_only": true,
+  "icons": [
+    {
+      "src": "images/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icons/icon-144x144.png",
+      "sizes": "144x103",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/icon-152x152.png",
+      "sizes": "152x109",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/icon-192x192.png",
+      "sizes": "192x138",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/icon-384x384.png",
+      "sizes": "384x276",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/icon-512x512.png",
+      "sizes": "512x368",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null
+}
