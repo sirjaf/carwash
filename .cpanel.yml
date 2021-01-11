@@ -1,5 +1,5 @@
 ---
   deployment:
     tasks:
-      - export DEPLOYPATH = /var/www/0518487/Jaafarprojects.website/carwash
-      - /bin/cp -a * DEPLOYPATH
+      - export DEPLOYPATH=/var/www/0518487/Jaafarprojects.website/carwash
+      - /bin/cp -a * $DEPLOYPATH
