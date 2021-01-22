@@ -4,9 +4,8 @@
         
         $tournament = mysqli_real_escape_string($conn, $_POST['tournament']);
         $country_id = mysqli_real_escape_string($conn, (int)$_POST['country']);
-       // $season_id = (int) $_POST['season'];
-        //$tournament = mysqli_real_escape_string($conn, $_POST['tournament']);
-        if (empty($tournament) || empty($country_id)){//|| empty($season_id)) {
+
+        if (empty($tournament) || empty($country_id)){
            echo getMessageWarning("Fail to save record.Field(s) must not be empty or the record already exists ","Failed");
            exit();
         } else {

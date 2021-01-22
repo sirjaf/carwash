@@ -460,17 +460,20 @@ function deleteConfirm(m_id,m_url) {
     var boldelete;
     boldelete = confirm("Are you sure you want to delete fixture ");
     if (boldelete === true) {
+        
         $.ajax({
             type: "POST",
             url: str_url ,
             data: {"id": id},
             success: function(data) {
+                
                 $('#info').html(data);
                 //window.location.reload();
                 setTimeout(()=>window.location.reload(),3000);
 
             }
         });
+        
     }
     else{
          alert("Skipped Deleting");

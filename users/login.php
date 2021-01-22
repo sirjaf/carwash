@@ -1,6 +1,6 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/users/includes/header_page.php';?>
 <?php
-//include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
+
 echo "
     <div id=\"content-table\">
     

@@ -12,7 +12,9 @@
         echo "<select><option>Select Tournment</option>";
         while($row=mysqli_fetch_assoc($result))
         {
-            echo "<option value=".$row["id"].">";echo $row['name']; echo "</option>";
+            echo "<option value=".$row["id"].">";
+            echo $row['name']; 
+            echo "</option>";
         }
 
     echo "</select>";

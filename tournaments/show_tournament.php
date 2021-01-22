@@ -13,18 +13,16 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
             $tournament_name = $row_tourns['name'];
             $tournament_country_id = $row_tourns['country_id'];
             $tournament_id =  $row_tourns['id'];
-            //$team_tournament=$row_teams['tournament_id'];
+            
              $sqlCountry = "SELECT id,name FROM countries ORDER BY name"; 
             $resultCountry = mysqli_query($conn,$sqlCountry);
-            $url = "https://carwash.jaafarprojects.website/tournaments/delete_tournament.php";
+            $url = "/tournaments/delete_tournament.php";
+
             while ($row_country = mysqli_fetch_assoc($resultCountry)){
                 if ($row_country['id']==$tournament_country_id) {
                     $tournament_country = $row_country['name'];
-                    //$team_tournament<a href ="."../tournaments/delete_tournament.php?id=".(int)$row_tourns['id'].">Delete</a>
-;
                     break;
-                }  
-                                
+                }                  
             } 
             echo "
                 <div id =\"info\"></div>

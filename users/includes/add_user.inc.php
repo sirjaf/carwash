@@ -1,7 +1,6 @@
 <?php include $_SERVER['DOCUMENT_ROOT'].'/users/includes/header_page.php';?>
 
 <?php
-    //include_once 'H:\wamp64\www\carwash\includes\dbconn.inc.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
 
@@ -12,7 +11,6 @@
     if (isset($_POST['submit'])) {
         
         if ((empty($user_email) || empty($user_hashpwd) || empty($user_confpwd)) && !($user_hashpwd==$user_confpwd)) {
-
             echo getMessageWarning("Fail to save record.Field(s) must not be empty or the record already exists ","Failed");
             exit();
         } else {
@@ -25,9 +23,7 @@
                 //header("Location: ../index.php");
             } else {
                 getMessageSuccess("Successfully Added User","User Added");
-                 //header("Location: ../add_user.php?user=success");
-                 //header("Location: ../index.php");
-                 exit();
+                exit();
             } 
         }  
     } else {

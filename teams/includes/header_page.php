@@ -24,12 +24,12 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
          <aside data-pushbar-id=\"top\" class=\"pushbar from_top\">
 		    <div class=\"title\"><span data-pushbar-close class=\"close push_right push-span\"></span> Dawaki Viewing Center</div>
                 <ul class=\"menu\">
-                    <li><a href=\"https://carwash.jaafarprojects.website\">Home</a></li>";
+                    <li><a href=\"/\">Home</a></li>";
                     
                     if (isset($_SESSION['logged_in']) and $_SESSION['logged_in']){
-                        echo("<li><a href=\"https://carwash.jaafarprojects.website/users/admin.php\">".$_SESSION['user']."</a></li>");
+                        echo("<li><a href=\"/users/admin.php\">".$_SESSION['user']."</a></li>");
                     }else{
-                        echo("<li><a href=\"https://carwash.jaafarprojects.website/users/login.php\">Admin</a></li>");
+                        echo("<li><a href=\"/users/login.php\">Admin</a></li>");
                     }
                   echo "
                 </ul>
@@ -38,16 +38,16 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
         <div id=\"wrapper\">
         <header class=\"site-header clearfix\" id=\"sitenav\">
              <img src=\"/images/icons/icon-72x72.png\" id=\"img-sitenav\" />
-            <h2 id=\"sitename\"><a href=\"https://carwash.jaafarprojects.website\">Dawaki Viewing Center</a></h2>
+            <h2 id=\"sitename\"><a href=\"/\">Dawaki Viewing Center</a></h2>
             <nav class=\"main-nav\">
                 <ul>
-                    <li><a href=\"https://carwash.jaafarprojects.website\">Home</a></li>
+                    <li><a href=\"/\">Home</a></li>
                     ";
 
                      if (isset($_SESSION['logged_in']) and $_SESSION['logged_in']){
-                        echo("<li><a href=\"https://carwash.jaafarprojects.website/users/admin.php\">".$_SESSION['user']."</a></li>");
+                        echo("<li><a href=\"/users/admin.php\">".$_SESSION['user']."</a></li>");
                     }else{
-                        echo("<li><a href=\"https://carwash.jaafarprojects.website/users/login.php\">Admin</a></li>");
+                        echo("<li><a href=\"/users/login.php\">Admin</a></li>");
                     }
                     //echo ($_SESSION['logged_in']) ? "<li><a href=\"/carwash/admin.php\">".$_SESSION['user']."</a></li>" : "<li><a href=\"/carwash/users/login.php\">Admin</a></li>";
                   echo "

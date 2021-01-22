@@ -2,16 +2,11 @@
 echo "</section>
             
                  <aside class=\"sidebar-col\">
-                    
-                    
                      <div id=\"standings\">";
-                        
                        //echo LeagueTable($_SERVER['DOCUMENT_ROOT']."/json/epl.json");
                      echo "</div>
                 </aside>
-            </div>
-            
-            
+            </div>  
         </main>
         <footer class=\"footer\">
           <p> Dawaki Viewing Center &copy; 2018 - "; echo date("Y");

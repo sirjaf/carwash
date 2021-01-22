@@ -110,15 +110,21 @@ if(isset($_POST["regassoc"]) && !empty($_POST["regassoc"])){
                         INNER JOIN tournaments tn ON tm.country_id=tn.country_id	
                         INNER JOIN countries co ON tm.country_id=co.id WHERE tm.id!=".$_POST['teamA_id']." AND co.id=".$_POST["country_id"]. 
                         " AND tn.id=".$_POST["tournament_id"]." order by team_name";
-                echo "In ajax. Tourn id=".$_POST["tournament_id"];
-                $result = mysqli_query($conn,$sql);
-                echo "<select><option>Select Team B</option>";
-                while($row=mysqli_fetch_assoc($result))
-                {
-                    echo "<option value=".$row["team_id"].">";echo $row['team_name']; echo "</option>";
-                }
 
-                echo "</select>";
+                    echo "In ajax. Tourn id=".$_POST["tournament_id"];
+
+                    $result = mysqli_query($conn,$sql);
+                    
+                    echo "<select><option>Select Team B</option>";
+
+                    while($row=mysqli_fetch_assoc($result))
+                    {
+                        echo "<option value=".$row["team_id"].">";
+                        echo $row['team_name']; 
+                        echo "</option>";
+                    }
+
+                    echo "</select>";
                 }    
                         
             }

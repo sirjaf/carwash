@@ -1,6 +1,6 @@
 <?php
     //include_once 'H:\wamp64\www\carwash\includes\dbconn.inc.php';
-    include_once $_SERVER['DOCUMENT_ROOT'].'/carwash/includes/dbconn.inc.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
     //$tournament=$_GET["id"];
    // echo "In ajax. Tourn id=".$_POST["tournament_id"];
 

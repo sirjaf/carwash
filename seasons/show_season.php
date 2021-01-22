@@ -16,7 +16,7 @@ if (isset($_SESSION['logged_in'])) {
         $season_end = $row_seasons['snend'];
         $active = $row_seasons['active'] == '1' ? 'Yes' : 'No';
         
-        $url = "https://carwash.jaafarprojects.website/seasons/delete_season.php";
+        $url = "/seasons/delete_season.php";
         echo "
         
         <div id=\"content-table\">

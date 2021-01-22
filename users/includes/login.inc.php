@@ -4,7 +4,9 @@ session_start();
 }
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
+
 $_SESSION['logged_in']=false;
+
 if (isset($_POST['submit'])){
         $user_email = mysqli_real_escape_string($conn, $_POST['emailuser']);
         $user_pwd = mysqli_real_escape_string($conn, $_POST['pwd']);
@@ -23,13 +25,12 @@ if (isset($_POST['submit'])){
                 $_SESSION['pwd']=$user['hashpwd'];
                 $_SESSION['logged_in']=true;
                 header("Location: /users/admin.php");
-                //echo "You are Logged in.";
+                
             }else{
             header("Location: /users/login.php");
-            //echo "password does not match";
+            
             }
         }
     }
-    //echo isset($_POST['submit']);
 
     

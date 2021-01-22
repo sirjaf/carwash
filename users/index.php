@@ -16,7 +16,7 @@ if ($page == '' || $page == 1) {
     
 }
 
-$url = "https://carwash.jaafarprojects.website/users/delete_user.php";
+$url = "/users/delete_user.php";
 
 if (isset($_SESSION['logged_in'])) {
     $sql = "SELECT * FROM users WHERE id !=". (int)$_SESSION['user_id']." ORDER BY email LIMIT ".$page1.", 10" ;

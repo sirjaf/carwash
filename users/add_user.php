@@ -1,7 +1,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'].'/users/includes/header_page.php';?>
-
 <?php 
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
+
 if (isset($_SESSION['logged_in'])) {
     echo "
     <div id=\"content-table\">

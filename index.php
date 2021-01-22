@@ -35,7 +35,7 @@ session_start();
         <aside data-pushbar-id=\"top\" class=\"pushbar from_top\">
 		<div class=\"title\"><span data-pushbar-close class=\"close push_right push-span\"></span> Dawaki Viewing Center</div>
                 <ul class=\"menu\">
-                    <li><a href=\"https://carwash.jaafarprojects.website\">Home</a></li>
+                    // <li><a href=\"/\">Home</a></li>
                     <li onclick='getEngland()'><a href=\"#England\">England</a></li>
                     <li onClick='getFrance()'><a href=\"#France\">France</a></li>
                     <li onClick='getGermany()'><a href=\"#Germany\">Germany</a></li>
@@ -46,9 +46,9 @@ session_start();
                     <li onClick='getComebol()'><a href=\"#CONMEBOL\">CONMEBOL</a></li>
                     <li onClick='getFifa()'><a href=\"#FIFA\">FIFA</a></li>";
                     if (isset($_SESSION['logged_in']) and $_SESSION['logged_in']){
-                        echo("<li><a href=\"https://carwash.jaafarprojects.website/users/admin.php\">".$_SESSION['user']."</a></li>");
+                        echo("<li><a href=\"/users/admin.php\">".$_SESSION['user']."</a></li>");
                     }else{
-                        echo("<li><a href=\"https://carwash.jaafarprojects.website/users/login.php\">Admin</a></li>");
+                        echo("<li><a href=\"/users/login.php\">Admin</a></li>");
                     }
                   echo "
                 </ul>
@@ -58,10 +58,10 @@ session_start();
         <div id=\"wrapper\">
         <header class=\"site-header clearfix\" id=\"sitenav\">
             <img src=\"/images/icons/icon-72x72.png\" id=\"img-sitenav\" />
-            <h2 id=\"sitename\"><a href=\"https://carwash.jaafarprojects.website\">Dawaki Viewing Center</a></h2>
+            <h2 id=\"sitename\"><a href=\"/\">Dawaki Viewing Center</a></h2>
             <nav class=\"main-nav\">
                 <ul>
-                    <li><a href=\"https://carwash.jaafarprojects.website\">Home</a></li>
+                    <li><a href=\"/\">Home</a></li>
                     <li onclick='getEngland()'><a href=\"#England\">England</a></li>
                     <li onClick='getFrance()'><a href=\"#France\">France</a></li>
                     <li onClick='getGermany()'><a href=\"#Germany\">Germany</a></li>
@@ -72,9 +72,9 @@ session_start();
                     <li onClick='getComebol()'><a href=\"#CONMEBOL\">CONMEBOL</a></li>
                     <li onClick='getFifa()'><a href=\"#FIFA\">FIFA</a></li>";
                     if (isset($_SESSION['logged_in']) and $_SESSION['logged_in']){
-                        echo("<li><a href=\"https://carwash.jaafarprojects.website/users/admin.php\">".$_SESSION['user']."</a></li>");
+                        echo("<li><a href=\"/users/admin.php\">".$_SESSION['user']."</a></li>");
                     }else{
-                        echo("<li><a href=\"https://carwash.jaafarprojects.website/users/login.php\">Admin</a></li>");
+                        echo("<li><a href=\"/users/login.php\">Admin</a></li>");
                     }
                   echo "
                 </ul>
@@ -91,7 +91,7 @@ session_start();
                     getInformation($conn);
                     echo "<div class=\"mydisplay\">
                        <p><strong>Download Application For your Android Device</strong></p><br />
-                        <a href=\"https://carwash.jaafarprojects.website/download/Dawaki_Viewing_Center_1.0.0.apk\" class=\"btn\">Download</a><br />
+                        <a href=\"/download/Dawaki_Viewing_Center_1.0.0.apk\" class=\"btn\">Download</a><br />
                     </div><br /><br />
                     <div>
                         

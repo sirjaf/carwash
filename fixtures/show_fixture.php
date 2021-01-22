@@ -2,7 +2,7 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
 
-$url = "https://carwash.jaafarprojects.website/fixtures/delete_fixture.php";
+$url = "/fixtures/delete_fixture.php";
 
 if (isset($_SESSION['logged_in'])) {
     if (isset($_GET['id'])) {

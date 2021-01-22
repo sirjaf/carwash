@@ -17,7 +17,7 @@
             $tblCountry ="countries";
             $selectName="country";
             
-             $url = "https://carwash.jaafarprojects.website/tournaments/delete_tournament.php";
+             $url = "/tournaments/delete_tournament.php";
              
             echo "
             <div id =\"info\"></div>

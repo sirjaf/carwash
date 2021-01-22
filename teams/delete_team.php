@@ -10,8 +10,6 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
         $sql = "DELETE FROM teams where id=". (int)$_POST['id'];
         $result = mysqli_query($conn,$sql);
         echo getMessageDeleted("Team Deleted.","Delete");
-        //header("Location: /teams/index.php");
-          
     }else {
        // header("Location: /users/login.php");
     }     

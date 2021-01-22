@@ -16,7 +16,7 @@ if ($page == '' || $page == 1) {
   $page1 = ($page*10)-10;
 }
 
-$url = "https://carwash.jaafarprojects.website/seasons/delete_season.php";
+$url = "/seasons/delete_season.php";
 
 if (isset($_SESSION['logged_in'])) {
     $sql = "SELECT * FROM seasons ORDER BY name LIMIT ".$page1.", 10" ;

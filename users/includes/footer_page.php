@@ -2,8 +2,6 @@
 echo "</section>
             
                  <aside class=\"sidebar-col\">
-                 
-                    
                      <div id=\"standings\">";
                         
                        ///echo LeagueTable($_SERVER['DOCUMENT_ROOT']."/json/epl.json");

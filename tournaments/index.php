@@ -16,7 +16,7 @@ if ($page == '' || $page == 1) {
   $page1 = ($page*10)-10;
 }
 
-$url = "https://carwash.jaafarprojects.website/tournaments/delete_tournament.php";
+$url = "/tournaments/delete_tournament.php";
 
     if (isset($_SESSION['logged_in'])) {
 
@@ -32,9 +32,7 @@ $url = "https://carwash.jaafarprojects.website/tournaments/delete_tournament.php
         if (!$result) {
             die("Failed to fetch data from Database.");
         } else {
-            //header("Location: ../add_team.php?team=success");
-            //exit();
-            
+                
             echo " 
             <div id =\"info\"></div>
             <div id=\"content-table\">

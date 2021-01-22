@@ -13,7 +13,7 @@ if (isset($_SESSION['logged_in'])) {
         $season_start = $row_seasons['snstart'];
         $season_end = $row_seasons['snend'];
         $season_active = ($row_seasons['active']=='1') ? "checked" : "unchecked";
-        $url = "https://carwash.jaafarprojects.website/seasons/delete_season.php";
+        $url = "/seasons/delete_season.php";
         //$season_active = $row_seasons['active'];
       
         echo "

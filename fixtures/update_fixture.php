@@ -26,7 +26,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
             $resultSeason = mysqli_query($conn, $sqlSeason);
             $tblTeam ="team";
             $tblTourn ="tournament";
-            $url = "https://carwash.jaafarprojects.website/fixtures/delete_fixture.php";
+            $url = "/fixtures/delete_fixture.php";
             $sqlTournament = "SELECT id,name FROM tournaments WHERE country_id=".$fix_country_id." ORDER BY name";
             
             $sqlTeam = "SELECT id,name FROM teams WHERE country_id=".$fix_country_id." ORDER BY id";
