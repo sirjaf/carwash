@@ -26,7 +26,7 @@ if ($_SESSION['logged_in']) {
         </div>
         </div><br />";
 }else {
-    //header("Location: http://carwash.jaafarprojects.website/users/login.php/login.php");
+    header("Location: /users/login.php/login.php");
     //echo "Not logged in";
 }
 ?>

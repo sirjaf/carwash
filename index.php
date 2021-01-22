@@ -68,10 +68,12 @@ session_start();
                     <li onClick='getGermany()'><a href=\"#Germany\">Germany</a></li>
                     <li onClick='getItaly()'><a href=\"#Italy\">Italy</a></li>
                     <li onClick='getSpain()'><a href=\"#Spain\">Spain</a></li>
-                    <li onClick='getUefa()'><a href=\"#UEFA\">UEFA</a></li>
-                    <li onClick='getCaf()'><a href=\"#CAF\">CAF</a></li>
-                    <li onClick='getComebol()'><a href=\"#CONMEBOL\">CONMEBOL</a></li>
-                    <li onClick='getFifa()'><a href=\"#FIFA\">FIFA</a></li>";
+                    ";
+                    // echo "<li onClick='getUefa()'><a href=\"#UEFA\">UEFA</a></li>
+                    // <li onClick='getCaf()'><a href=\"#CAF\">CAF</a></li>
+                    // <li onClick='getComebol()'><a href=\"#CONMEBOL\">CONMEBOL</a></li>
+                    // <li onClick='getFifa()'><a href=\"#FIFA\">FIFA</a></li>";
+
                     if (isset($_SESSION['logged_in']) and $_SESSION['logged_in']){
                         echo("<li><a href=\"/users/admin.php\">".$_SESSION['user']."</a></li>");
                     }else{
