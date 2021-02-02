@@ -33,19 +33,15 @@ session_start();
     </head>
     <body>
         <aside data-pushbar-id=\"top\" class=\"pushbar from_top\">
-		<div class=\"title\"><span data-pushbar-close class=\"close push_right push-span\"></span> Dawaki Viewing Center</div>
+		 <div class=\"title\"><span data-pushbar-close class=\"close push_right push-span\"></span> Dawaki Viewing Center</div>
                 <ul class=\"menu\">
-                    // <li><a href=\"/\">Home</a></li>
+                    <li><a href=\"/\">Home</a></li>
                     <li onclick='getEngland()'><a href=\"#England\">England</a></li>
                     <li onClick='getFrance()'><a href=\"#France\">France</a></li>
                     <li onClick='getGermany()'><a href=\"#Germany\">Germany</a></li>
                     <li onClick='getItaly()'><a href=\"#Italy\">Italy</a></li>
                     <li onClick='getSpain()'><a href=\"#Spain\">Spain</a></li>
                    ";
-                //    echo " <li onClick='getUefa()'><a href=\"#UEFA\">UEFA</a></li>
-                //    <li onClick='getCaf()'><a href=\"#CAF\">CAF</a></li>
-                //    <li onClick='getComebol()'><a href=\"#CONMEBOL\">CONMEBOL</a></li>
-                //    <li onClick='getFifa()'><a href=\"#FIFA\">FIFA</a></li>";
                     if (isset($_SESSION['logged_in']) and $_SESSION['logged_in']){
                         echo("<li><a href=\"/users/admin.php\">".$_SESSION['user']."</a></li>");
                     }else{
@@ -57,7 +53,7 @@ session_start();
 	</aside>
 
         <div id=\"wrapper\">
-        <header class=\"site-header clearfix\" id=\"sitenav\">
+          <header class=\"site-header clearfix\" id=\"sitenav\">
             <img src=\"/images/icons/icon-72x72.png\" id=\"img-sitenav\" />
             <h2 id=\"sitename\"><a href=\"/\">Dawaki Viewing Center</a></h2>
             <nav class=\"main-nav\">
@@ -69,11 +65,6 @@ session_start();
                     <li onClick='getItaly()'><a href=\"#Italy\">Italy</a></li>
                     <li onClick='getSpain()'><a href=\"#Spain\">Spain</a></li>
                     ";
-                    // echo "<li onClick='getUefa()'><a href=\"#UEFA\">UEFA</a></li>
-                    // <li onClick='getCaf()'><a href=\"#CAF\">CAF</a></li>
-                    // <li onClick='getComebol()'><a href=\"#CONMEBOL\">CONMEBOL</a></li>
-                    // <li onClick='getFifa()'><a href=\"#FIFA\">FIFA</a></li>";
-
                     if (isset($_SESSION['logged_in']) and $_SESSION['logged_in']){
                         echo("<li><a href=\"/users/admin.php\">".$_SESSION['user']."</a></li>");
                     }else{
