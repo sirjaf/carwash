@@ -998,18 +998,9 @@ function page_generate_today2($mresult, $mcomp_name_title)
     }
 
 
-
-
-
-    //header("Location: ../add_team.php?team=success");
-
-    //exit();
-
-
-
     echo "
 
-            <div class=\"leagues\"> <h4><span>$mcomp_name_title</span></h4>
+            <div class=\"leagues\"> <h1><span>$mcomp_name_title</span></h1>
 
                 ";
 
@@ -1057,7 +1048,7 @@ function page_generate_today2($mresult, $mcomp_name_title)
 
                             <div class=\"index-club-crest\">
 
-                                <img src=\"" . check_crest($fixture_crest_teamA) . " \" alt=\"team_crest\" height=\"50\" width=\"50\">               
+                                <img src=\"" . check_crest($fixture_crest_teamA) . " \" alt=\"team_crest\" height=\"32\" width=\"32\">               
 
                             </div>
 
@@ -1087,7 +1078,7 @@ function page_generate_today2($mresult, $mcomp_name_title)
 
                             <div class=\"index-club-crest\">
 
-                                <img src=\"" . check_crest($fixture_crest_teamB) . " \" alt=\"team_crest\" height=\"50\" width=\"50\">               
+                                <img src=\"" . check_crest($fixture_crest_teamB) . " \" alt=\"team_crest\" height=\"32\" width=\"32\">               
 
                             </div>
 
