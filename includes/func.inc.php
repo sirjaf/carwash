@@ -1135,7 +1135,7 @@ function page_generate3($mresult, $mcomp_name_title)
 
     echo "
 
-            <div class=\"leagues\"> <h4><span>$mcomp_name_title</span></h4><br />";
+            <div class=\"leagues\"> <h1><span>$mcomp_name_title</span></h1><br />";
 
 
 
@@ -1175,7 +1175,7 @@ function page_generate3($mresult, $mcomp_name_title)
 
             $myDateTracker = $myDate;
 
-            echo "<span class=\"myspan\">{$myDate}</span><br /><br />";
+            echo "<h2><span class=\"myspan\">{$myDate}</span></h2><br /><br />";
         }
 
 
