@@ -1048,7 +1048,7 @@ function page_generate_today2($mresult, $mcomp_name_title)
 
                             <div class=\"index-club-crest\">
 
-                                <img src=\"" . check_crest($fixture_crest_teamA) . " \" alt=\"team_crest\" height=\"32\" width=\"32\">               
+                                <img src=\"" . check_crest($fixture_crest_teamA) . " \" alt=\"team_crest\" height=\"50\" width=\"50\">               
 
                             </div>
 
@@ -1078,7 +1078,7 @@ function page_generate_today2($mresult, $mcomp_name_title)
 
                             <div class=\"index-club-crest\">
 
-                                <img src=\"" . check_crest($fixture_crest_teamB) . " \" alt=\"team_crest\" height=\"32\" width=\"32\">               
+                                <img src=\"" . check_crest($fixture_crest_teamB) . " \" alt=\"team_crest\" height=\"50\" width=\"50\">               
 
                             </div>
 
