@@ -85,7 +85,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
 
             <div class=\"club-crest-search\">
 
-                <img id=\"team_crest\" src=\"".check_crest($team_crest_url)."\" alt=\"team_crest\"><br />
+                <img id=\"team_crest\" src=\"".check_crest($team_crest_url)."\" alt=\"team_crest\"><br /><br />
 
                 <button type='button' name='btnSearchCrest' id='teamCrestSearch' class=\"btn\" onClick='getTeamCrest()'>Search Crest</button>
 
