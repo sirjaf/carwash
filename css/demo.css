@@ -23,6 +23,7 @@ textarea{
     margin-bottom: 0px;
     min-height: 200px;
     line-height: 1;
+    width: 100%;
 }
 
 .close{

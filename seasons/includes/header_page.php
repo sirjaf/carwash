@@ -24,7 +24,8 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
          <aside data-pushbar-id=\"top\" class=\"pushbar from_top\">
 		    <div class=\"title\"><span data-pushbar-close class=\"close push_right push-span\"></span> Dawaki Viewing Center</div>
                 <ul class=\"menu\">
-                    <li><a href=\"/\">Home</a></li>";
+                    <li><a href=\"/\">Home</a></li>
+                    <li><a href=\"/contact.php\">Contact Us</a></li>";
                     
                     if (isset($_SESSION['logged_in']) and $_SESSION['logged_in']){
                         echo("<li><a href=\"/users/admin.php\">".$_SESSION['user']."</a></li>");
@@ -42,6 +43,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
             <nav class=\"main-nav\">
                 <ul>
                     <li><a href=\"/\">Home</a></li>
+                    <li><a href=\"/contact.php\">Contact Us</a></li>
                     ";
 
                      if (isset($_SESSION['logged_in']) and $_SESSION['logged_in']){

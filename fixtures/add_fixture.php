@@ -58,7 +58,13 @@ if (isset($_SESSION['logged_in'])){
                     <input type='time' name='fTime' id='fTime' value='' placeholder='Time'><br /><br />
                     <input type='date' name='fDate' id='fDate' value='' placeholder='Date'><br /><br />
                     <input type='text' name='price' id='price' value='' placeholder='Price'><br /><br />
-                    <label for='active'>Send To Homepage</label> <input type='checkbox' name='homepage' id='homepage'><br><br />
+                    
+                    <div class=\"div-sendToHamepage\">
+                        <label for='active'>Send To Homepage</label> 
+                        <input type='checkbox' name='homepage' id='homepage'>
+                        
+                    </div>
+                    <br /><br />
 
                     <button type='button' name='btnAdd' id='buttonAdd' class=\"btn\" value='Add' onClick='addRecord()'>Add Fixture</button>
                     <button type='reset' name='cancel' class=\"btn\">Cancel</button>

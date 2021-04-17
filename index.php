@@ -8,9 +8,7 @@ session_start();
     <!DOCTYPE HTML>
     <html lang=\"en\">
     <head>
-        
-        
-        
+    
         <link rel=\"manifest\" href=\"/manifest.json\">
         <meta name=\"viewport\" content=\"width=device-width\"/>
         <meta name=\"description\" content=\"Fixtures for Present and Upcoming matches to be watched at carwash viewing center, naibawa, Kano\"/>
@@ -41,6 +39,7 @@ session_start();
                     <li onClick='getGermany()'><a href=\"#Germany\">Germany</a></li>
                     <li onClick='getItaly()'><a href=\"#Italy\">Italy</a></li>
                     <li onClick='getSpain()'><a href=\"#Spain\">Spain</a></li>
+                    <li><a href=\"/contact.php\">Contact Us</a></li>
                    ";
                     if (isset($_SESSION['logged_in']) and $_SESSION['logged_in']){
                         echo("<li><a href=\"/users/admin.php\">".$_SESSION['user']."</a></li>");
@@ -64,6 +63,7 @@ session_start();
                     <li onClick='getGermany()'><a href=\"#Germany\">Germany</a></li>
                     <li onClick='getItaly()'><a href=\"#Italy\">Italy</a></li>
                     <li onClick='getSpain()'><a href=\"#Spain\">Spain</a></li>
+                    <li><a href=\"/contact.php\">Contact Us</a></li>
                     ";
                     if (isset($_SESSION['logged_in']) and $_SESSION['logged_in']){
                         echo("<li><a href=\"/users/admin.php\">".$_SESSION['user']."</a></li>");

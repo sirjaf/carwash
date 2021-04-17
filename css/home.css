@@ -78,21 +78,28 @@ input[type=checkbox] {
 
 form {
     display: inline-block;
-    align-self: center;
     margin: auto;
     text-align: left;
+    width: 50%;
 }
 .div-forms{
     text-align: center;
+    width: 100%;
 }
 
 .form-wrapper {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  margin: 20px auto;
+ 
   /* background-color: black; */
   /*border: 1px green solid;*/
 }
 
+.contact-form{
+  padding: 20px;
+}
 .club-crest-search {
   width: 200px;
   height: auto;
@@ -108,7 +115,9 @@ form {
 }
 
 .admin-div {
+    display: block;
     font-weight: bold;
+    padding-left: 30px;
 }
 
 .admin-div a {
@@ -121,6 +130,10 @@ form {
     text-decoration: none;
     color: white;
     background-color: green;
+}
+
+.div-sendToHamepage{
+  display: flex;
 }
 
 #content-table{
@@ -301,6 +314,7 @@ form {
     box-shadow: 10px 10px 50px #d2d2d2;
     border-radius: 5px;
     border: 1px solid grey;
+   
     
 
 }
@@ -476,6 +490,11 @@ td {
   /*border: 1px green solid;*/
 }
   
+form {
+  
+  width: 100%;
+  
+}
 .club-crest-search {
   width: 300px;
   height: auto;
