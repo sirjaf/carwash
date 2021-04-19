@@ -64,7 +64,7 @@ function getTeamA1(val, mregassoc) {
 
     $.ajax({
         type: "POST",
-url: "/fixtures/ajax_teamA_regassoc.php",
+        url: "/fixtures/ajax_teamA_regassoc.php",
         data: { "tournament_id": mytournament_id, "country_id": mycountry_id, "regassoc": myregassoc },
         success: function(data) {
             $('#teamA').html(data);
@@ -494,9 +494,39 @@ function gotoAddRecord() {
 
 }
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     document.querySelector('select[name="continent"]').onChange=getCountries;
-// }, false);
+function SendMessage() {
+    //alert("Button Clicked");
+
+    var fname = $('#fname').val();
+    var subject = $('#subject').val();
+    var email = $('#email').val();
+    var message = $('#message').val();
+    
+    //alert(homepg);
+
+    // alert("Tournament :" + tournament + ", Team A :" + teamA + ", Team B :" + teamB +
+    // " ,ftime :" + fTime + ", fDate :" + fDate + " ,Price :" + price);
+
+    $.ajax({
+        type: "POST",
+        url: "/includes/contact.inc.php",
+        data: { "fname": fname, "subject": subject, "email": email, "message": message },
+        success: function(data) {
+                $('#info').html(data);
+               // window.location.reload();
+               setTimeout(()=>window.location.reload(),3000);
+            }
+            //     //alert("Fixture Saved");
+            //     //window.location = "/carwash/fixtures/index.php";
+
+        // },
+        // error: function() {
+        //     alert("Error Occured");
+        // }
+    });
+
+
+}
 
 function gotoPage(pageNum){
   window.location=pageNum;

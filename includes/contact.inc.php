@@ -10,9 +10,9 @@
         $message = mysqli_real_escape_string($conn,$_POST['message']);
         $emailTo = "admin@carwash.jaafarprojects.website";
         $headers = "From :" . $emailFrom;
-        $txt = "You have received message from ".$fName.".\n\n".$message;
+        $txt = "You have received message from ".$fName."\n\n".$message;
        
-        if (empty($fName) || empty($emailFrom) || empty($message) ) {
+        if (empty($fName) || empty($emailFrom) || empty($message) || empty( $subject)) {
             echo getMessageWarning("Name, Email and Message must not be empty.","Empty fields");
             //header("Location: ../add_fixture.php?fixture=empty");
             //exit();

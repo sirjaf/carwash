@@ -69,37 +69,37 @@ session_start();
 <main>
     <section class=\"billboard\">
     </section>
-
+    <div id =\"info\"></div><br />               
     <div class=\"form-wrapper\">
 		
     <div class=\"div-forms\">
-        <form class=\"contact-form\" action=\"/includes/contact.inc.php\" method=\"post\">
+        <form class=\"contact-form\" method=\"post\">
             <span>
                 Contact Us
             </span>
             <br /><br />
 
             <div class=\"v-padding\">
-                <input type=\"text\" name=\"fname\" placeholder=\"Full Name\">
+                <input type=\"text\" name=\"fname\" id=\"fname\" placeholder=\"Full Name\">
             </div>
             <br /><br />
 
             <div>
-                <input type=\"text\" name=\"email\" placeholder=\"Email\">
+                <input type=\"text\" name=\"email\" id=\"email\" placeholder=\"Email\">
             </div>
             <br /><br />
             
             <div>
-                <input type=\"text\" name=\"subject\" placeholder=\"Subject\">
+                <input type=\"text\" name=\"subject\" id=\"subject\" placeholder=\"Subject\">
             </div>
             <br /><br />
 
             <div>
-                <textarea name=\"message\" placeholder=\"Your Message\"></textarea>
+                <textarea name=\"message\" id=\"message\" placeholder=\"Your Message\"></textarea>
             </div>
             <br /><br />
             <div>
-                <button type=\"submit\" class=\"btn\">
+                <button type=\"button\" name=\"sendbtn\" class=\"btn\" onclick='SendMessage()'>
                     Send Email
                 </button>
             </div>
