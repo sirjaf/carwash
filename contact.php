@@ -66,38 +66,52 @@ session_start();
             <div id=\"mobile-menu\"><button data-pushbar-target=\"top\">Menu</button></div>
         </header>
        
+<main>
+    <section class=\"billboard\">
+    </section>
 
-	<div class=\"form-wrapper\">
+    <div class=\"form-wrapper\">
 		
-		<div class=\"div-forms\">
-			<form class=\"contact-form\">
-				<span>
-					Contact Us
-				</span>
-                <br /><br />
-				<div class=\"v-padding\">
-					<input type=\"text\" name=\"name\" placeholder=\"Full Name\">
-				</div>
-                <br /><br />
-				<div>
-					<input type=\"text\" name=\"email\" placeholder=\"Email\">
-				</div>
-                <br /><br />
-				<div>
-					<textarea name=\"message\" placeholder=\"Your Message\"></textarea>
-				</div>
-                <br /><br />
-				<div>
-					<button class=\"btn\">
-						Send Email
-					</button>
-				</div>
-			</form>
-		</div>
-	</div>
+    <div class=\"div-forms\">
+        <form class=\"contact-form\" action=\"/includes/contact.inc.php\" method=\"post\">
+            <span>
+                Contact Us
+            </span>
+            <br /><br />
+
+            <div class=\"v-padding\">
+                <input type=\"text\" name=\"fname\" placeholder=\"Full Name\">
+            </div>
+            <br /><br />
+
+            <div>
+                <input type=\"text\" name=\"email\" placeholder=\"Email\">
+            </div>
+            <br /><br />
+            
+            <div>
+                <input type=\"text\" name=\"subject\" placeholder=\"Subject\">
+            </div>
+            <br /><br />
+
+            <div>
+                <textarea name=\"message\" placeholder=\"Your Message\"></textarea>
+            </div>
+            <br /><br />
+            <div>
+                <button type=\"submit\" class=\"btn\">
+                    Send Email
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
 
 
-    <footer class=\"footer\">
+</main>
+	
+
+<footer class=\"footer\">
     <p> Dawaki Viewing Center &copy; 2018 - "; echo date("Y");
     echo "</p>
 </footer>

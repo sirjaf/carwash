@@ -1280,3 +1280,8 @@ function crest_to_url($strCrest)
 
     return $strCrest;
 }
+
+function SendMessage()
+{
+    
+}
