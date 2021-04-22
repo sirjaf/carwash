@@ -512,17 +512,11 @@ function SendMessage() {
         url: "/includes/contact.inc.php",
         data: { "fname": fname, "subject": subject, "email": email, "message": message },
         success: function(data) {
+            $('#info').show()
                 $('#info').html(data);
-               // window.location.reload();
-               setTimeout(()=>window.location.reload(),3000);
+               //setTimeout(()=>window.location.reload(),3000);
+               setTimeout(()=>$('#info').hide(),3000);
             }
-            //     //alert("Fixture Saved");
-            //     //window.location = "/carwash/fixtures/index.php";
-
-        // },
-        // error: function() {
-        //     alert("Error Occured");
-        // }
     });
 
 
