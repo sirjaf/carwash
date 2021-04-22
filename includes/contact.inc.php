@@ -14,15 +14,11 @@
        
         if (empty($fName) || empty($emailFrom) || empty($message) || empty( $subject)) {
             echo getMessageWarning("Name, Email and Message must not be empty.","Empty fields");
-            //header("Location: ../add_fixture.php?fixture=empty");
-            //exit();
+            exit();
+        } 
+        if ( mail($emailTo,$subject,$txt,$headers)){
+            echo getMessageSuccess("Message Sent Successfully","Sent");
         } else {
-            
-                mail($emailTo,$subject,$txt,$headers);
-                echo getMessageSuccess("Record Saved Successfully","Saved");
-               
-        }  
-    
-    
-
+            echo getMessageWarning("Message not sent.","Send Fail");
+        }
 ?>
