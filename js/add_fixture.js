@@ -90,7 +90,6 @@ function getTeamB(val) {
 }
 
 function addRecord() {
-    //alert("Button Clicked");
 
     var country = $('#country').val();
     var tournament = $('#tournament').val();
@@ -101,27 +100,16 @@ function addRecord() {
     var price = $('#price').val();
     var season_id = $('#season_id').val();
     var homepg = ($('#homepage').is(':checked')) ? 1 : 0;
-    //alert(homepg);
-
-    // alert("Tournament :" + tournament + ", Team A :" + teamA + ", Team B :" + teamB +
-    // " ,ftime :" + fTime + ", fDate :" + fDate + " ,Price :" + price);
 
     $.ajax({
         type: "POST",
         url: "/fixtures/includes/add_fixture2.inc.php",
         data: { "country": country, "tournament": tournament, "teamA": teamA, "teamB": teamB, "fTime": fTime, "fDate": fDate, "price": price,"homepage": homepg, "season_id": season_id },
         success: function(data) {
+                $('#info').show();
                 $('#info').html(data);
-               // window.location.reload();
-               setTimeout(()=>window.location.reload(),3000);
+               setTimeout(()=> $('#info').hide(),3000);
             }
-            //     //alert("Fixture Saved");
-            //     //window.location = "/carwash/fixtures/index.php";
-
-        // },
-        // error: function() {
-        //     alert("Error Occured");
-        // }
     });
 
 
@@ -129,7 +117,7 @@ function addRecord() {
 
 
 function updateRecord() {
-    //alert("Button Clicked");
+    
     var fix_id = $('#fix_id').val();
     var country = $('#fix_country_id').val();
     var tournament = $('#tournament').val();
@@ -139,23 +127,17 @@ function updateRecord() {
     var fDate = $('#fDate').val();
     var price = $('#price').val();
     var homepg = ($('#homepage').is(':checked')) ? 1 : 0;
-    alert(homepg);
-
-    // alert("Tournament :" + tournament + ", Team A :" + teamA + ", Team B :" + teamB +
-    // " ,ftime :" + fTime + ", fDate :" + fDate + " ,Price :" + price);
 
     $.ajax({
         type: "POST",
         url: "/fixtures/includes/update_fixture.inc.php",
         data: { "fix_id": fix_id,"country": country, "tournament": tournament, "teamA": teamA, "teamB": teamB, "fTime": fTime, "fDate": fDate, "price": price,"homepage": homepg },
         success: function(data) {
+                $('#info').show();
                 $('#info').html(data);
-                setTimeout(()=>window.location.reload(),3000);
+                setTimeout(()=> $('#info').hide(),3000);
             }
-            //     //alert("Fixture Saved");
-            //     //window.location = "/carwash/fixtures/index.php";
-
-        // },
+           
         // error: function() {
         //     alert("Error Occured");
         // }
@@ -179,8 +161,6 @@ function updateRecordHomepg(m_fix_id) {
             homepg=1;
         }
 
-    //alert("homepage " + homepg + "fix_id" + fix_id);
-
     $.ajax({
         type: "POST",
         url: "/fixtures/includes/update_fixture2.inc.php",
@@ -189,18 +169,11 @@ function updateRecordHomepg(m_fix_id) {
 
         success: function(data) {
 
+                $('#info').show();
                 $('#info').html(data);
-                //window.location.reload();
-                setTimeout(()=>window.location.reload(),3000);
+                setTimeout(()=> $('#info').hide(),3000);
                 
             }
-            //     //alert("Fixture Saved");
-            //     //window.location = "/carwash/fixtures/index.php";
-
-        // },
-        // error: function() {
-        //     alert("Error Occured");
-        // }
     });
 
 
@@ -208,58 +181,45 @@ function updateRecordHomepg(m_fix_id) {
 
 
 function addRecordSeason() {
-    // alert("Button Clicked");
 
     var season = $('#season').val();
     var snstart = $('#snstart').val();
     var snend = $('#snend').val();
     var active = ($('#active').is(':checked')) ? 1 : 0;
-   // alert(homepg);
-
-    // alert("Tournament :" + tournament + ", Team A :" + teamA + ", Team B :" + teamB +
-    // " ,ftime :" + fTime + ", fDate :" + fDate + " ,Price :" + price);
 
     $.ajax({
         type: "POST",
         url: "/seasons/includes/add_season.inc.php",
         data: { "season": season, "snstart": snstart, "snend": snend, "active": active},
-        success: function(data) {
-                $('#info').html(data);
-                //window.location.reload();
-                setTimeout(()=>window.location.reload(),3000);
-            }
-            //     //alert("Fixture Saved");
-            //     //window.location = "/carwash/fixtures/index.php";
 
-        // },
-        // error: function() {
-        //     alert("Error Occured");
-        // }
+        success: function(data) {
+
+                $('#info').show();
+                $('#info').html(data);
+                setTimeout(()=> $('#info').hide(),3000);
+            }
+           
     });
 
 
 }
 
 function updateRecordSeason() {
-    //alert("Button Clicked");
+   
     var season_id = $('#season_id').val();
     var season = $('#season').val();
     var snstart = $('#snstart').val();
     var snend = $('#snend').val();
     var active = ($('#active').is(':checked')) ? 1 : 0;
-     //alert("update clicked");
-
-    // alert("Tournament :" + tournament + ", Team A :" + teamA + ", Team B :" + teamB +
-    // " ,ftime :" + fTime + ", fDate :" + fDate + " ,Price :" + price);
-
+     
     $.ajax({
         type: "POST",
         url: "/seasons/includes/update_season.inc.php",
         data: { "season_id":season_id,"season": season, "snstart": snstart, "snend": snend, "active": active},
         success: function(data) {
-                $('#info').html(data);
-                //window.location.reload();
-                setTimeout(()=>window.location.reload(),3000);
+            $('#info').show();
+            $('#info').html(data);
+            setTimeout(()=> $('#info').hide(),3000);
             }
     });
 
@@ -267,55 +227,42 @@ function updateRecordSeason() {
 }
 
 function addRecordTeam() {
-    // alert("Button Clicked");
 
     var country = $('#country').val();
     var team = $('#team').val();
     var team_crest = document.getElementById('team_crest').getAttribute('src');
-    // alert(homepg);
 
     $.ajax({
         type: "POST",
         url: "/teams/includes/add_team.inc.php",
         data: { "country": country, "team": team, "team_crest": team_crest },
         success: function (data) {
+            $('#info').show();
             $('#info').html(data);
-            //window.location.reload();
-            setTimeout(() => window.location.reload(), 3000);
+            setTimeout(() =>  $('#info').hide(), 3000);
         }
-        //     //alert("Fixture Saved");
-        //     //window.location = "/carwash/fixtures/index.php";
-
-        // },
-        // error: function() {
-        //     alert("Error Occured");
-        // }
     });
 
 
 }
 
 function updateRecordTeam() {
-    //alert("Button Clicked");
+
     var teamid = $('#teamid').val();
     var country = $('#country').val();
     var team = $('#team').val();
     var team_crest = document.getElementById('team_crest').getAttribute('src');
-    // alert(homepg);
 
     $.ajax({
         type: "POST",
         url: "/teams/includes/update_team.inc.php",
         data: { "teamid": teamid, "country": country, "team": team,"team_crest": team_crest },
         success: function (data) {
+            $('#info').show();
             $('#info').html(data);
-            setTimeout(() => window.location.reload(), 3000);
-            //window.location.reload();
+            setTimeout(() =>  $('#info').hide(), 3000);
         }
-        // },
-        // error: function() {
-        //     alert("Error Occured");
-        // }
+        
     });
 
 
@@ -327,15 +274,13 @@ function getTeamCrest() {
     var team = $('#team').val();
     var crestUrl = "";
     var base_URL = "https://en.wikipedia.org/api/rest_v1/page/summary/" + team;
-    //var res = "";
     var crestUrl = document.getElementById('team_crest').getAttribute('src');
 
     $.ajax({
         type: "GET",
         url: base_URL,
-        //data: { "continent": val },
         success: function (data) {
-            //console.log(data);
+
             document.getElementById('team_crest').setAttribute('src',data.thumbnail.source);
            
         }
@@ -345,66 +290,47 @@ function getTeamCrest() {
 
 
 function addRecordTournament() {
-    //alert("Button Clicked");
 
     var country = $('#country').val();
     var tournament = $('#tournament').val();
-
-   // alert(homepg);
 
     $.ajax({
         type: "POST",
         url: "/tournaments/includes/add_tournament.inc.php",
         data: { "country": country, "tournament": tournament },
         success: function(data) {
-                $('#info').html(data);
-              //window.location.reload();
-               setTimeout(()=>window.location.reload(),3000); 
+            $('#info').show();
+            $('#info').html(data);
+            setTimeout(()=> $('#info').hide(),3000); 
             }
-            //     //alert("Fixture Saved");
-            //     //window.location = "/carwash/fixtures/index.php";
-
-        // },
-        // error: function() {
-        //     alert("Error Occured");
-        // }
+            
     });
 
 
 }
 
 function updateRecordTournament() {
-  // alert("Button Clicked");
+  
     var tourn_id = $('#tourn_id').val();
      var country = $('#country').val();
     var tournament = $('#tournament').val();
-
-   // alert(homepg);
 
     $.ajax({
         type: "POST",
         url: "/tournaments/includes/update_tournament.inc.php",
         data: { "tourn_id": tourn_id ,"country": country, "tournament": tournament },
         success: function(data) {
+                $('#info').show();
                 $('#info').html(data);
-                //window.location.reload();
                 setTimeout(()=>window.location.reload(),3000);
             }
-            //     //alert("Fixture Saved");
-            //     //window.location = "/carwash/fixtures/index.php";
-
-        // },
-        // error: function() {
-        //     alert("Error Occured");
-        // }
+           
     });
 }
 
 function searchFixture() {
-  // alert("Button Clicked");
 
     var strSearch = $('#search').val().trim();
-   // alert(homepg);
 
     $.ajax({
         type: "POST",
@@ -412,23 +338,15 @@ function searchFixture() {
         data: { "search": strSearch },
         success: function(data) {
                 $('.div-forms').html(data);
-                //window.location.reload();
+                
             }
-            //     //alert("Fixture Saved");
-            //     //window.location = "/carwash/fixtures/index.php";
-
-        // },
-        // error: function() {
-        //     alert("Error Occured");
-        // }
+           
     });
 }
 
 function searchTeam() {
-  // alert("Button Clicked");
 
     var strSearch = $('#search').val().trim();
-   // alert(homepg);
 
     $.ajax({
         type: "POST",
@@ -436,15 +354,8 @@ function searchTeam() {
         data: { "search": strSearch },
         success: function(data) {
                 $('.div-forms').html(data);
-                //window.location.reload();
-            }
-            //     //alert("Fixture Saved");
-            //     //window.location = "/carwash/fixtures/index.php";
-
-        // },
-        // error: function() {
-        //     alert("Error Occured");
-        // }
+        }
+           
     });
 }
 
@@ -454,7 +365,6 @@ window.location = "/fixtures/index.php";
 
 function deleteConfirm(m_id,m_url) {
 
-    //alert("Javascript Works  " + m_id);
     var id = m_id;
     var str_url = m_url;
     var boldelete;
@@ -466,9 +376,8 @@ function deleteConfirm(m_id,m_url) {
             url: str_url ,
             data: {"id": id},
             success: function(data) {
-                
+                //$('#info').show();
                 $('#info').html(data);
-                //window.location.reload();
                 setTimeout(()=>window.location.reload(),3000);
 
             }
@@ -495,27 +404,20 @@ function gotoAddRecord() {
 }
 
 function SendMessage() {
-    //alert("Button Clicked");
-
+    
     var fname = $('#fname').val();
     var subject = $('#subject').val();
     var email = $('#email').val();
     var message = $('#message').val();
-    
-    //alert(homepg);
-
-    // alert("Tournament :" + tournament + ", Team A :" + teamA + ", Team B :" + teamB +
-    // " ,ftime :" + fTime + ", fDate :" + fDate + " ,Price :" + price);
 
     $.ajax({
         type: "POST",
         url: "/includes/contact.inc.php",
         data: { "fname": fname, "subject": subject, "email": email, "message": message },
         success: function(data) {
-            $('#info').show()
-                $('#info').html(data);
-               //setTimeout(()=>window.location.reload(),3000);
-               setTimeout(()=>$('#info').hide(),3000);
+            $('#info').show();
+            $('#info').html(data);
+            setTimeout(()=>$('#info').hide(),3000);
             }
     });
 
