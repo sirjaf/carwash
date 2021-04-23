@@ -322,7 +322,7 @@ function updateRecordTournament() {
         success: function(data) {
                 $('#info').show();
                 $('#info').html(data);
-                setTimeout(()=>window.location.reload(),3000);
+                setTimeout(()=>$('#info').hide(),3000);
             }
            
     });
