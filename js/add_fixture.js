@@ -391,7 +391,6 @@ function deleteConfirm(m_id,m_url) {
 
 function gotoAddRecord() {
 
-    //alert("Javascript Works");
     $.ajax({
         type: "GET",
         url: "/fixtures/add_fixture.php",
