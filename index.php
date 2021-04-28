@@ -57,7 +57,7 @@ session_start();
             <h2 id=\"sitename\"><a href=\"/\">Dawaki Viewing Center</a></h2>
             <nav class=\"main-nav\">
                 <ul>
-                    <li><a href=\"/\">Home</a></li>
+                    <li><a href=\"/\" active='true'>Home</a></li>
                     <li onclick='getEngland()'><a href=\"#England\">England</a></li>
                     <li onClick='getFrance()'><a href=\"#France\">France</a></li>
                     <li onClick='getGermany()'><a href=\"#Germany\">Germany</a></li>

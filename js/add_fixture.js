@@ -1,10 +1,10 @@
 // <script type="text/javascript">
+
 var mytournament_id;
 var mycountry_id;
 var myregassoc;
 
 function getCountries(val) {
-    //alert("Javascript Works  " + val);
     mycountry_id = val;
     $.ajax({
         type: "POST",
@@ -421,6 +421,63 @@ function SendMessage() {
     });
 
 
+}
+
+function validateContactInpputs(){
+
+    var isValidated = false;
+    var isValidFname = false;
+    var isValidEmail = false;
+    var isValidSubject = false;
+    var isValidMessage = false;
+
+    if ($('#fname').val().length < 1 ){ 
+        $('#fname').css("border-color","red");
+        isValidFname = false;
+    } else {
+        $('#fname').css("border-color","black");
+        isValidFname = true;
+    }
+
+
+    if ($('#email').val().length < 1 ){ 
+        $('#email').css("border-color","red");
+        isValidEmail = false;
+    } else {
+        $('#email').css("border-color","black");
+        isValidEmail = true;
+    }
+
+    if ($('#subject').val().length < 1 ){ 
+        $('#subject').css("border-color","red");
+        isValidSubject = false;
+    } else {
+        $('#subject').css("border-color","black");
+        isValidSubject = true;
+    }
+
+
+    if ($('#message').val().length < 1 ){ 
+        $('#message').css("border-color","red");
+        isValidMessage = false;
+    } else {
+        $('#message').css("border-color","black");
+        isValidMessage = true;
+    }
+
+   return isValidated = ((isValidFname && isValidEmail && isValidSubject && isValidMessage)) ? true :false; 
+}
+
+function messageSendHandler(){
+
+    if (validateContactInpputs()) {
+        SendMessage();
+    }
+
+}
+
+function changeInputHandler(){
+    
 }
 
 function gotoPage(pageNum){

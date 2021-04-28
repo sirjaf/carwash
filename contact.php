@@ -80,26 +80,26 @@ session_start();
             <br /><br />
 
             <div class=\"v-padding\">
-                <input type=\"text\" name=\"fname\" id=\"fname\" placeholder=\"Full Name\">
+                <input type=\"text\" name=\"fname\" id=\"fname\" placeholder=\"Full Name\" required>
             </div>
             <br /><br />
 
             <div>
-                <input type=\"text\" name=\"email\" id=\"email\" placeholder=\"Email\">
+                <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"Email\" required>
             </div>
             <br /><br />
             
             <div>
-                <input type=\"text\" name=\"subject\" id=\"subject\" placeholder=\"Subject\">
+                <input type=\"text\" name=\"subject\" id=\"subject\" placeholder=\"Subject\" required>
             </div>
             <br /><br />
 
             <div>
-                <textarea name=\"message\" id=\"message\" placeholder=\"Your Message\"></textarea>
+                <textarea name=\"message\" id=\"message\" placeholder=\"Your Message\" required></textarea>
             </div>
             <br /><br />
             <div>
-                <button type=\"button\" name=\"sendbtn\" class=\"btn\" onclick='SendMessage()'>
+                <button type=\"button\" name=\"sendbtn\" class=\"btn\" required onclick='messageSendHandler()'>
                     Send Email
                 </button>
             </div>
