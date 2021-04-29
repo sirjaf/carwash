@@ -820,7 +820,7 @@ function getInformation($mconn)
 
     $title = $row['title'];
 
-    echo "<b>" . $title . "</b><br /><br />" . $info . "</b><br /><br />";
+    echo "<b>" . $title . "</b><br /><br />" . $info . "<br /><br />";
 }
 
 
