@@ -85,7 +85,7 @@ session_start();
             <br /><br />
 
             <div>
-                <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"Email\" required>
+                <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"Email\" required onkeyup ='changeEmailInputHandler()'>
             </div>
             <br /><br />
             
@@ -145,4 +145,3 @@ session_start();
 </script>
 </body>
 </html>";
-?>
