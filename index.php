@@ -81,7 +81,7 @@ session_start();
             </section>
             <div class=\"column-wrapper clearfix\">
                 <section class=\"main-col\">
-                    <div id =\"info\"><br /><br />";
+                    <div id =\"info\"></div><br /><br />";
                     getInformation($conn);
                     echo "<div class=\"mydisplay\">
                        <p><strong>Download Application For your Android Device</strong></p><br />

@@ -144,8 +144,6 @@ if (isset($_SESSION['logged_in'])){
 
                     <th><h4>Time</h4></th>
 
-                    <th><h4>Price</h4></th>
-
                     <th><h4>Home Page</h4></th>
 
                     <th><h4>Actions</h4></th>
@@ -172,8 +170,6 @@ if (isset($_SESSION['logged_in'])){
 
             $fixture_time = $row_fixtures['fix_time'];
 
-            $fixture_price = $row_fixtures['fix_price'];
-
             $fixture_hp = (int)$row_fixtures['fix_hp'];
 
             $fixture_id = (int)$row_fixtures['fixtures_id'];
@@ -199,8 +195,6 @@ if (isset($_SESSION['logged_in'])){
                     <td><strong>$fixture_date</strong></td>
 
                     <td><strong>$fixture_time</strong></td>
-
-                    <td><strong>$fixture_price</strong></td>
 
                   <td><input type='checkbox' name='homepage{$fixture_id}' id='homepage{$fixture_id}' onclick='updateRecordHomepg($fixture_id)' ";
 

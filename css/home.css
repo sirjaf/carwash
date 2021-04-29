@@ -137,7 +137,8 @@ form {
 }
 
 #content-table{
-    width: 100%;
+    width: 75%;
+    margin: auto;
 }
 
 .delete {
@@ -408,7 +409,7 @@ span {
    width: 100%;
     }
 
-    .billboard {
+  .billboard {
         /* background-color: #64b5f6; */
         color: white;
         text-align: center;
@@ -418,7 +419,10 @@ span {
         background-image: url("/images/billboardmobile.png");
         background-repeat: no-repeat;
     }
-
+  #content-table{
+      width: 100%;
+      margin: auto;
+  }
  table{
      table-layout: fixed;
      	display: block;
