@@ -1,4 +1,6 @@
 <?php
+if (session_id()=='') {
+    session_start();}
 if (isset($_SESSION['logged_in'])) {
     if (isset($_GET['id'])) {
         include_once $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/header_page.php';
