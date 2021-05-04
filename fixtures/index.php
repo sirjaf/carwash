@@ -21,11 +21,7 @@ if ($page == '' || $page == 1) {
 
 }
 
-
-
 $url = "/fixtures/delete_fixture.php";
-
-
 
 if (isset($_SESSION['logged_in'])){
     include $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/header_page.php';
@@ -209,7 +205,7 @@ if (isset($_SESSION['logged_in'])){
     }
 
 }else {
-    header("Location: /users/admin.php");
+    header("Location: /users/login.php");
     die;
 }       
 
