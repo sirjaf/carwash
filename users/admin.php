@@ -25,9 +25,7 @@ if ($_SESSION['logged_in']) {
         </div>
         </div><br />";
 }else {
-    // flush(); // Flush the buffer
-    // ob_flush();
-    header("Location: /users/login.php/login.php");
+    header("Location: /users/login.php");
     die;
 }
 ?>
