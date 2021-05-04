@@ -1,37 +1,34 @@
 <?php
+if (session_id() == '') {
+    session_start();
+}
 if (isset($_GET['page'])) {
 
     $page = htmlentities($_GET['page']);
+} else {
 
-}
-
-else {
-
-  $page = 1;
-
+    $page = 1;
 }
 
 if ($page == '' || $page == 1) {
 
-  $page1 = 0;
-
+    $page1 = 0;
 } else {
 
-  $page1 = ($page*10)-10;
-
+    $page1 = ($page * 10) - 10;
 }
 
 $url = "/fixtures/delete_fixture.php";
 
-if (isset($_SESSION['logged_in'])){
-    include $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/header_page.php';
-    include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
+if (isset($_SESSION['logged_in'])) {
+    include $_SERVER['DOCUMENT_ROOT'] . '/fixtures/includes/header_page.php';
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/dbconn.inc.php';
 
-    $sqlSeason = "Select * from seasons where active=1"; 
+    $sqlSeason = "Select * from seasons where active=1";
 
-    $resultSeason = mysqli_query($conn,$sqlSeason);
+    $resultSeason = mysqli_query($conn, $sqlSeason);
 
-    if (mysqli_num_rows($resultSeason)==1) {
+    if (mysqli_num_rows($resultSeason) == 1) {
 
         $row = mysqli_fetch_assoc($resultSeason);
         $season_id = $row['id'];
@@ -42,27 +39,26 @@ if (isset($_SESSION['logged_in'])){
         INNER JOIN teams tb ON f.teamB_id=tb.id 
         INNER JOIN countries cn ON f.country_id=cn.id
         INNER JOIN tournaments tm ON f.tournament_id=tm.id where f.season_id=$season_id 
-        ORDER BY f.fDate DESC LIMIT ".$page1.", 10" ;
+        ORDER BY f.fDate DESC LIMIT " . $page1 . ", 10";
 
         $msql = "SELECT f.id AS fixtures_id,ta.name AS teamA,tb.name AS teamB,tm.name AS tour_name,
         cn.name AS fix_country,f.fDate AS fix_date,f.fTime AS fix_time,f.price AS fix_price,f.season_id FROM fixtures f
         INNER JOIN teams ta ON f.teamA_id=ta.id
         INNER JOIN teams tb ON f.teamB_id=tb.id
         INNER JOIN countries cn ON f.country_id=cn.id
-        INNER JOIN tournaments tm ON f.tournament_id=tm.id where f.season_id=".$season_id;
+        INNER JOIN tournaments tm ON f.tournament_id=tm.id where f.season_id=" . $season_id;
 
-        $result = mysqli_query($conn,$sql);
+        $result = mysqli_query($conn, $sql);
 
         if (!$result) {
 
-        echo $sql;
+            echo $sql;
 
-        die("Failed to fetch records to Database.");
-
+            die("Failed to fetch records to Database.");
         } else {
 
 
-        echo "
+            echo "
 
         <div id =\"info\"></div>
 
@@ -112,31 +108,31 @@ if (isset($_SESSION['logged_in'])){
 
             ";
 
-        while ($row_fixtures = mysqli_fetch_assoc($result)) {
+            while ($row_fixtures = mysqli_fetch_assoc($result)) {
 
-            $fixture_teamA = $row_fixtures['teamA'];
+                $fixture_teamA = $row_fixtures['teamA'];
 
-            $fixture_teamB = $row_fixtures['teamB'];
+                $fixture_teamB = $row_fixtures['teamB'];
 
-            $fixture_name = " VS ";
+                $fixture_name = " VS ";
 
-            //$fixture_name = $row_fixtures['teamA']." VS ".$row_fixtures['teamB'];
+                //$fixture_name = $row_fixtures['teamA']." VS ".$row_fixtures['teamB'];
 
-            $fixture_tournament = $row_fixtures['tour_name'];
+                $fixture_tournament = $row_fixtures['tour_name'];
 
-            $fixture_country = $row_fixtures['fix_country'];
+                $fixture_country = $row_fixtures['fix_country'];
 
-            $fixture_date = $row_fixtures['fix_date'];
+                $fixture_date = $row_fixtures['fix_date'];
 
-            $fixture_time = $row_fixtures['fix_time'];
+                $fixture_time = $row_fixtures['fix_time'];
 
-            $fixture_hp = (int)$row_fixtures['fix_hp'];
+                $fixture_hp = (int)$row_fixtures['fix_hp'];
 
-            $fixture_id = (int)$row_fixtures['fixtures_id'];
+                $fixture_id = (int)$row_fixtures['fixtures_id'];
 
-            
 
-            echo "
+
+                echo "
 
                 <tr>
 
@@ -156,11 +152,11 @@ if (isset($_SESSION['logged_in'])){
 
                   <td><input type='checkbox' name='homepage{$fixture_id}' id='homepage{$fixture_id}' onclick='updateRecordHomepg($fixture_id)' ";
 
-                    echo ($fixture_hp==1?'checked':'')."></td>";
+                echo ($fixture_hp == 1 ? 'checked' : '') . "></td>";
 
-                    echo "<td>
+                echo "<td>
 
-                        <a href =". "/fixtures/show_fixture.php?id=".(int)$row_fixtures['fixtures_id'].">Show</a>
+                        <a href =" . "/fixtures/show_fixture.php?id=" . (int)$row_fixtures['fixtures_id'] . ">Show</a>
 
                         <a href=\"#\" onClick='deleteConfirm($fixture_id,\"{$url}\")' class=\"delete\">Delete</a>
 
@@ -171,10 +167,9 @@ if (isset($_SESSION['logged_in'])){
                 </tr>
 
             ";
+            }
 
-        }
-
-        echo "
+            echo "
 
         </table>
 
@@ -184,14 +179,12 @@ if (isset($_SESSION['logged_in'])){
 
         ";
 
-        
 
-        echo create_pagination_links2($conn,$msql,$page)."<br /><br />";
 
-    }
+            echo create_pagination_links2($conn, $msql, $page) . "<br /><br />";
+        }
+    } else {
 
-    } else{
-        
         echo "<div>
 
         <p>
@@ -201,15 +194,13 @@ if (isset($_SESSION['logged_in'])){
         </p>
 
     </div> <br />";
-
     }
-
-}else {
+} else {
     header("Location: /users/login.php");
     die;
-}       
+}
 
 ?>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/footer_page.php';?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/fixtures/includes/footer_page.php'; ?>
 
