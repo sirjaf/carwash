@@ -1,13 +1,4 @@
 <?php
-
-include $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/header_page.php';
-
-include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
-
-//include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
-
-
-
 if (isset($_GET['page'])) {
 
     $page = htmlentities($_GET['page']);
@@ -37,70 +28,43 @@ $url = "/fixtures/delete_fixture.php";
 
 
 if (isset($_SESSION['logged_in'])){
+    include $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/header_page.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
 
     $sqlSeason = "Select * from seasons where active=1"; 
 
     $resultSeason = mysqli_query($conn,$sqlSeason);
 
-    
-
     if (mysqli_num_rows($resultSeason)==1) {
 
-        $row=mysqli_fetch_assoc($resultSeason);
-
-        //$season_name = $row['name'];
-
+        $row = mysqli_fetch_assoc($resultSeason);
         $season_id = $row['id'];
 
-       
-
         $sql = "SELECT f.id AS fixtures_id,ta.name AS teamA,tb.name AS teamB,tm.name AS tour_name,
-
         cn.name AS fix_country,f.fDate AS fix_date,f.fTime AS fix_time,f.price AS fix_price,f.homepage AS fix_hp,f.season_id FROM fixtures f 
-
         INNER JOIN teams ta ON f.teamA_id=ta.id
-
         INNER JOIN teams tb ON f.teamB_id=tb.id 
-
         INNER JOIN countries cn ON f.country_id=cn.id
-
         INNER JOIN tournaments tm ON f.tournament_id=tm.id where f.season_id=$season_id 
-
         ORDER BY f.fDate DESC LIMIT ".$page1.", 10" ;
 
-        
-
         $msql = "SELECT f.id AS fixtures_id,ta.name AS teamA,tb.name AS teamB,tm.name AS tour_name,
-
         cn.name AS fix_country,f.fDate AS fix_date,f.fTime AS fix_time,f.price AS fix_price,f.season_id FROM fixtures f
-
         INNER JOIN teams ta ON f.teamA_id=ta.id
-
         INNER JOIN teams tb ON f.teamB_id=tb.id
-
         INNER JOIN countries cn ON f.country_id=cn.id
-
         INNER JOIN tournaments tm ON f.tournament_id=tm.id where f.season_id=".$season_id;
-
-
 
         $result = mysqli_query($conn,$sql);
 
-
-
-    if (!$result) {
+        if (!$result) {
 
         echo $sql;
 
         die("Failed to fetch records to Database.");
 
-    } else {
+        } else {
 
-        //header("Location: ../add_team.php?team=success");
-
-        //exit();
-
-          //echo "<a href=\"/fixtures/standings.php\">Standing</a>";
 
         echo "
 
@@ -174,8 +138,6 @@ if (isset($_SESSION['logged_in'])){
 
             $fixture_id = (int)$row_fixtures['fixtures_id'];
 
-            //$del_url="/fixtures/delete_fixture.php?id=".(int)$row_fixtures['fixtures_id'];
-
             
 
             echo "
@@ -232,10 +194,8 @@ if (isset($_SESSION['logged_in'])){
 
     }
 
-    
-
     } else{
-
+        
         echo "<div>
 
         <p>
@@ -246,21 +206,12 @@ if (isset($_SESSION['logged_in'])){
 
     </div> <br />";
 
-  
-
     }
 
-
-
 }else {
-
-    //header("Location: /users/admin.php");
-
-   
-
-}
-
-        
+    header("Location: /users/admin.php");
+    die;
+}       
 
 ?>
 
