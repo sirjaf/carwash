@@ -2,7 +2,6 @@
 if (session_id()=='') {
 session_start();}
 include_once $_SERVER['DOCUMENT_ROOT'].'/users/includes/header_page.php';
-
 if ($_SESSION['logged_in']) {
     echo "
         <div id=\"content-table\" class=\"admin-div myfixture\">
@@ -27,7 +26,7 @@ if ($_SESSION['logged_in']) {
         </div><br />";
 }else {
     header("Location: /users/login.php/login.php");
-    //echo "Not logged in";
+    die;
 }
 ?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/users/includes/footer_page.php';?>

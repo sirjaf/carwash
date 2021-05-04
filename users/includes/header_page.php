@@ -64,5 +64,3 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
             <div class=\"column-wrapper clearfix\">
                 <section class=\"main-col\">
                     <div id=\"info\"></div><br />";
-                    
-?>
