@@ -1,12 +1,10 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/header_page.php'?>
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
-
-$url = "/fixtures/delete_fixture.php";
-
 if (isset($_SESSION['logged_in'])) {
     if (isset($_GET['id'])) {
-        //echo "show clicked";
+        include_once $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/header_page.php';
+        include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
+
+        $url = "/fixtures/delete_fixture.php";
         $sql = "SELECT f.id AS fixtures_id,ta.name AS teamA,tb.name AS teamB,tm.name AS tour_name,
                 f.fDate AS fix_date,f.fTime AS fix_time,f.price AS fix_price FROM fixtures f 
                 INNER JOIN teams ta ON f.teamA_id=ta.id
@@ -68,8 +66,8 @@ if (isset($_SESSION['logged_in'])) {
     }
     
 }else {
-    //header("Location: /users/login.php");
+    header("Location: /users/login.php");
+    die;
 }
 
-?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/footer_page.php'?>
+include_once $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/footer_page.php'?>
