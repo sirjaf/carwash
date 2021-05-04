@@ -2,6 +2,7 @@
 if (session_id()=='') {
 session_start();}
 if ($_SESSION['logged_in']) {
+    include_once $_SERVER['DOCUMENT_ROOT'].'/users/includes/header_page.php';
     echo "
         <div id=\"content-table\" class=\"admin-div myfixture\">
         <span>ADMIN : ".$_SESSION['user']."</span>
@@ -24,8 +25,8 @@ if ($_SESSION['logged_in']) {
         </div>
         </div><br />";
 }else {
-    flush(); // Flush the buffer
-    ob_flush();
+    // flush(); // Flush the buffer
+    // ob_flush();
     header("Location: /users/login.php/login.php");
     die;
 }
