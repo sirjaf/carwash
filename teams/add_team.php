@@ -1,10 +1,8 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/teams/includes/header_page.php'?>
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
-
-setlocale(LC_ALL, "en_US.utf8");
-
 if (isset($_SESSION['logged_in'])) {
+   include_once $_SERVER['DOCUMENT_ROOT'].'/teams/includes/header_page.php';
+   setlocale(LC_ALL, "en_US.utf8");
    $team_crest_url="";
    echo "
     <div id=\"content-table\">
@@ -32,7 +30,7 @@ if (isset($_SESSION['logged_in'])) {
             </div><br />
     </div>";
 }else {
-    //header("Location: /users/login.php");
+    header("Location: /users/login.php");
 }
 ?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/teams/includes/footer_page.php'?>

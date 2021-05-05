@@ -10,8 +10,7 @@ session_start();}
         $result = mysqli_query($conn,$sql);
         echo getMessageDeleted("Tournament Deleted.","Delete");
        
-     
     }else {
-       // header("Location: /users/login.php");
+        header("Location: /users/login.php");
     }     
 ?>

@@ -1,10 +1,11 @@
-<?php include $_SERVER['DOCUMENT_ROOT'].'/users/includes/header_page.php'; ?>
-
 <?php
 //include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
 //include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
-if (isset($_SESSION['logged_in'])) {
+if (session_id()=='') {
+    session_start();}
     
+if (isset($_SESSION['logged_in'])) {
+    include $_SERVER['DOCUMENT_ROOT'].'/users/includes/header_page.php';
     if (isset($_GET['id'])) {
         echo "show clicked";
         $sql = "SELECT * FROM users where id=". (int)$_GET['id'];
@@ -40,8 +41,9 @@ if (isset($_SESSION['logged_in'])) {
         </div>
         ";
     }
+    include $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/footer_page.php';
 }else {
-  //  header("Location: /users/login.php");
+  header("Location: /users/login.php");
+  die();
 }   
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/footer_page.php';?>

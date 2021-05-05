@@ -1,4 +1,5 @@
 <?php
+include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/dbconn.inc.php';
 if (session_id() == '') {
     session_start();
 }
@@ -22,7 +23,6 @@ $url = "/fixtures/delete_fixture.php";
 
 if (isset($_SESSION['logged_in'])) {
     include $_SERVER['DOCUMENT_ROOT'] . '/fixtures/includes/header_page.php';
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/includes/dbconn.inc.php';
 
     $sqlSeason = "Select * from seasons where active=1";
 

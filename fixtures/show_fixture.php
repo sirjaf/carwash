@@ -71,5 +71,5 @@ if (isset($_SESSION['logged_in'])) {
     header("Location: /users/login.php");
     die;
 }
-
-include_once $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/footer_page.php'?>
+?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/footer_page.php'?>

@@ -1,10 +1,11 @@
-<?php include $_SERVER['DOCUMENT_ROOT'].'/tournaments/includes/header_page.php'; ?>
 <?php
     include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
+    if (session_id()=='') {
+        session_start();}
     if (isset($_SESSION['logged_in'])) {
        
-           // echo "show clicked";
+            include $_SERVER['DOCUMENT_ROOT'].'/tournaments/includes/header_page.php';
             $sql = "SELECT * FROM tournaments where id=". (int)$_GET['id'];
             $result = mysqli_query($conn,$sql);
             $row_tourn = mysqli_fetch_assoc($result);
@@ -40,7 +41,11 @@
             </div>
             </div> <br />
             ";
+
+            include $_SERVER['DOCUMENT_ROOT'].'/tournaments/includes/footer_page.php';
+
+        }else{
+            header("Location: /users/login.php");
         }  
   
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/tournaments/includes/footer_page.php';?>

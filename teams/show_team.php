@@ -1,12 +1,11 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/teams/includes/header_page.php'?>
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
+if (session_id()=='') {
+    session_start();}
 
 if (isset($_SESSION['logged_in'])) {
-
+    include_once $_SERVER['DOCUMENT_ROOT'].'/teams/includes/header_page.php';
     if (isset($_GET['id'])) {
-
-        //echo "show clicked";
 
         $sql = "SELECT * FROM teams where id=".(int)$_GET['id'];
 
@@ -121,15 +120,9 @@ if (isset($_SESSION['logged_in'])) {
         ";
 
     }
-
+    include_once $_SERVER['DOCUMENT_ROOT'].'/teams/includes/footer_page.php';
 }else {
-
-    //header("Location: /users/login.php");
+    header("Location: /users/login.php");
 
 }    
-
-
-
 ?>
-
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/teams/includes/footer_page.php'?>

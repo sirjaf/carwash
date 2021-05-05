@@ -14,7 +14,7 @@ session_start();}
         //header("Location: /users/index.php");
           
     }else {
-        //header("Location: /users/login.php");
-        echo  "Error Deleting";
+        header("Location: /users/login.php");
+        die;
     }     
 ?>

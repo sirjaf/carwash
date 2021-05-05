@@ -1,10 +1,9 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/seasons/includes/header_page.php'?>
-
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
 
 if (isset($_SESSION['logged_in'])) {
-       
+    include_once $_SERVER['DOCUMENT_ROOT'].'/seasons/includes/header_page.php';
+
         $sql = "SELECT * FROM seasons where id=".(int)$_GET['id'];
         $result = mysqli_query($conn,$sql);
         $row_seasons = mysqli_fetch_assoc($result);
@@ -39,8 +38,9 @@ if (isset($_SESSION['logged_in'])) {
         </div><br />
         </div>
         ";
+        include_once $_SERVER['DOCUMENT_ROOT'].'/seasons/includes/footer_page.php';
 }else {
-    //header("Location: /users/login.php");
+    header("Location: /users/login.php");
+    die();
 }      
 ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/seasons/includes/footer_page.php'?>

@@ -1,8 +1,8 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/users/includes/header_page.php'?>
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
-
+if (session_id()=='') {
+    session_start();}
 if (isset($_GET['page'])) {
     $page = htmlentities($_GET['page']);
 }
@@ -19,6 +19,7 @@ if ($page == '' || $page == 1) {
 $url = "/users/delete_user.php";
 
 if (isset($_SESSION['logged_in'])) {
+    include_once $_SERVER['DOCUMENT_ROOT'].'/users/includes/header_page.php';
     $sql = "SELECT * FROM users WHERE id !=". (int)$_SESSION['user_id']." ORDER BY email LIMIT ".$page1.", 10" ;
     $msql = "SELECT * FROM users";
     $result = mysqli_query($conn,$sql);
@@ -67,9 +68,9 @@ if (isset($_SESSION['logged_in'])) {
         
     } 
      echo create_pagination_links2($conn,$msql,$page)."<br /><br />";
+     include_once $_SERVER['DOCUMENT_ROOT'].'/users/includes/footer_page.php';
 }else {
-    //header("Location: /users/login.php");
+    header("Location: /users/login.php");
     
 }        
 ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/users/includes/footer_page.php';?>

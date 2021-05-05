@@ -1,8 +1,9 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/seasons/includes/header_page.php'?>
-
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
+
+if (session_id()=='') {
+    session_start();}
 
 if (isset($_GET['page'])) {
     $page = htmlentities($_GET['page']);
@@ -19,6 +20,8 @@ if ($page == '' || $page == 1) {
 $url = "/seasons/delete_season.php";
 
 if (isset($_SESSION['logged_in'])) {
+    include_once $_SERVER['DOCUMENT_ROOT'].'/seasons/includes/header_page.php';
+
     $sql = "SELECT * FROM seasons ORDER BY name LIMIT ".$page1.", 10" ;
      $msql = "SELECT * FROM seasons";
     
@@ -82,9 +85,11 @@ if (isset($_SESSION['logged_in'])) {
             "; 
              echo create_pagination_links2($conn,$msql,$page)."<br /><br />";
         } 
+        include_once $_SERVER['DOCUMENT_ROOT'].'/seasons/includes/footer_page.php';
 }else {
-  //header("Location:/carwash/users/login.php");
+  header("Location: /users/login.php");
+  die();
 }    
         
 ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/seasons/includes/footer_page.php'?>
+

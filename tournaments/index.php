@@ -1,9 +1,10 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/tournaments/includes/header_page.php'?>
 <?php
-
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
 
+if (session_id()=='') {
+    session_start();}
+    
 if (isset($_GET['page'])) {
     $page = htmlentities($_GET['page']);
 }
@@ -19,7 +20,7 @@ if ($page == '' || $page == 1) {
 $url = "/tournaments/delete_tournament.php";
 
     if (isset($_SESSION['logged_in'])) {
-
+        include_once $_SERVER['DOCUMENT_ROOT'].'/tournaments/includes/header_page.php';
     $sql = "SELECT tournaments.id AS tournament_id,countries.id AS country_id,
          tournaments.name AS tournament_name,countries.name AS country_name FROM tournaments 
         INNER JOIN countries ON tournaments.country_id = countries.id ORDER BY countries.name LIMIT ".$page1.", 10" ;
@@ -80,9 +81,9 @@ $url = "/tournaments/delete_tournament.php";
             ";
         }
             echo create_pagination_links2($conn,$msql,$page)."<br /><br />";
+            include_once $_SERVER['DOCUMENT_ROOT'].'/tournaments/includes/footer_page.php';
     }else {
-       // header("Location: /users/login.php");
+       header("Location: /users/login.php");
     }
         
 ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/tournaments/includes/footer_page.php';?>

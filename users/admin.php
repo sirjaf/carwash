@@ -24,9 +24,9 @@ if ($_SESSION['logged_in']) {
             <br />
         </div>
         </div><br />";
+        include_once $_SERVER['DOCUMENT_ROOT'].'/users/includes/footer_page.php';
 }else {
     header("Location: /users/login.php");
     die;
 }
 ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/users/includes/footer_page.php';?>

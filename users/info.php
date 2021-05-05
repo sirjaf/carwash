@@ -1,19 +1,13 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/users/includes/header_page.php'?>
-
 <?php
-
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
-
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
-
-
+if (session_id()=='') {
+    session_start();}
 
 $url = "/users/delete_user.php";
 
-
-
 if (isset($_SESSION['logged_in'])) {
-
+    include_once $_SERVER['DOCUMENT_ROOT'].'/users/includes/header_page.php';
     $sql = "SELECT * FROM information where id=1";
 
     $result = mysqli_query($conn,$sql);
@@ -69,11 +63,11 @@ if (isset($_SESSION['logged_in'])) {
 
         "; 
     }   
-
+    include_once $_SERVER['DOCUMENT_ROOT'].'/users/includes/footer_page.php';
 }else {
-
-    //header("Location: /users/login.php");   
+    header("Location: /users/login.php");
+    die();   
 }        
 
 ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/users/includes/footer_page.php';?>
+<?php ?>

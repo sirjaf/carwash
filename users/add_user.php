@@ -1,8 +1,10 @@
-<?php include $_SERVER['DOCUMENT_ROOT'].'/users/includes/header_page.php';?>
 <?php 
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
-
+if (session_id()=='') {
+    session_start();}
+    
 if (isset($_SESSION['logged_in'])) {
+    include $_SERVER['DOCUMENT_ROOT'].'/users/includes/header_page.php';
     echo "
     <div id=\"content-table\">
          <div>
@@ -23,8 +25,8 @@ if (isset($_SESSION['logged_in'])) {
     </form>
     </div><br />
     </div>";
+    include $_SERVER['DOCUMENT_ROOT'].'/users/includes/footer_page.php';
 }else {
-   // header("Location: /users/login.php");
+   header("Location: /users/login.php");
 }    
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/users/includes/footer_page.php';?>
