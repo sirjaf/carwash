@@ -1,6 +1,8 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
-
+if (session_id()=='') {
+    session_start();}
+    
 if (isset($_SESSION['logged_in'])) {
     include_once $_SERVER['DOCUMENT_ROOT'].'/seasons/includes/header_page.php';
 
