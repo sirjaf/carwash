@@ -66,10 +66,10 @@ if (isset($_SESSION['logged_in'])) {
         
         ";
     }
-    
+    include_once $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/footer_page.php';
 }else {
     header("Location: /users/login.php");
     die;
 }
 ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/footer_page.php'?>
+

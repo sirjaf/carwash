@@ -1,9 +1,10 @@
 <?php 
-include_once $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/header_page.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
-
+if (session_id() == '') {
+    session_start();
+}
 if (isset($_SESSION['logged_in'])){
-
+    include_once $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/header_page.php';
     $sqlSeason = "Select * from seasons where active=1";
     $resultSeason = mysqli_query($conn,$sqlSeason);
 
@@ -81,10 +82,11 @@ if (isset($_SESSION['logged_in'])){
             </div>";
 
     }
+    include_once $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/footer_page.php';
 }else {
-  //  header("Location: /users/login.php");
+  header("Location: /users/login.php");
+  die();
 }
 
 ?>
 
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/fixtures/includes/footer_page.php';?>
