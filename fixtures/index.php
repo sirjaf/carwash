@@ -195,6 +195,7 @@ if (isset($_SESSION['logged_in'])) {
 
     </div> <br />";
     }
+    include $_SERVER['DOCUMENT_ROOT'] . '/fixtures/includes/footer_page.php';
 } else {
     header("Location: /users/login.php");
     die;
@@ -202,5 +203,4 @@ if (isset($_SESSION['logged_in'])) {
 
 ?>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/fixtures/includes/footer_page.php'; ?>
 
