@@ -2,7 +2,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/dbconn.inc.php';
 if (session_id()=='') {
     session_start();}
-    
+
 if (isset($_SESSION['logged_in'])) {
     include_once $_SERVER['DOCUMENT_ROOT'].'/seasons/includes/header_page.php';
 
@@ -32,8 +32,11 @@ if (isset($_SESSION['logged_in'])) {
             <input type=\"text\" name=\"season\" id=\"season\" value=\"$season_name\" placeholder=\"Season\"><br /><br />
             <input type='date' name='snstart' id='snstart' value='$season_start' placeholder='Start Date'><br><br />
             <input type='date' name='snend' id='snend' value='$season_end' placeholder='End Date'><br><br />
-            <label for='active'>Active Season</label>
-            <input type='checkbox' name='active' id='active' value='".$row_seasons['active']."' ".$season_active."><br />
+            <div class='setActiveSeason'>
+                <label for='active'>Active Season</label>
+                <input type='checkbox' name='active' id='active' value='".$row_seasons['active']."' ".$season_active.">
+            </div>
+            <br />
             <br /><button type='button' name='btnAdd' id='buttonUpdate' class=\"btn\" value='Update' onClick='updateRecordSeason()'>Update</button>
             <button type=\"reset\" name=\"cancel\" class=\"btn\">Cancel</button>
         </form>

@@ -49,6 +49,10 @@ input[type=checkbox] {
     background: green;
 }
 
+.setActiveSeason{
+  display: flex;
+}
+
 #div-Add{
   display:block;
 

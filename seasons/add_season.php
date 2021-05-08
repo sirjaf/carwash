@@ -17,8 +17,12 @@
             <br /><br />
             <input type='date' name='snstart' id='snstart' value='' placeholder='Date'><br /><br />
             <input type='date' name='snend' id='snend' value='' placeholder='Date'><br /><br />
-            <label for='active'>Active Season</label> <input type='checkbox' name='active' id='active'><br><br />
-        
+            
+            <div class='setActiveSeason'>
+                <label for='active'>Active Season</label> 
+                <input type='checkbox' name='active' id='active'>
+            </div>
+            <br /><br />
             <button type='button' name='btnAdd' id='buttonAdd' class=\"btn\" value='Add' onClick='addRecordSeason()'>Add Season</button>
             <button type='reset' name='cancel' class=\"btn\">Cancel</button>
         </form>
