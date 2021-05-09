@@ -239,22 +239,11 @@ function populateCombo($selected, $selectName, $strSql)
 
 function page_generate_today_dataset_2($mconn)
 {
-
-
-
     $today = date("Y-m-d");
-
-    // $comp_name = $mcomp_name; //name of competion
-
-    // $country_name = $mcountry_name;
-
     $sqlSeason = "Select * from seasons where active=1";
-
     $resultSeason = mysqli_query($mconn, $sqlSeason);
 
     if (mysqli_num_rows($resultSeason) == 1) {
-
-
 
         $row = mysqli_fetch_assoc($resultSeason);
 
@@ -874,7 +863,7 @@ function LeagueTopScorer($tsJsonUrl)
 
     $table = $scorers["scorers"];
 
-    if (!empty($table)){
+    if (!empty($table)) {
 
         foreach ($table as $scorer) {
 
@@ -886,11 +875,9 @@ function LeagueTopScorer($tsJsonUrl)
     
                                      </div>";
         }
-    
+
         return $strTable;
     }
-
-   
 }
 
 
@@ -1283,5 +1270,4 @@ function crest_to_url($strCrest)
 
 function SendMessage()
 {
-    
 }
