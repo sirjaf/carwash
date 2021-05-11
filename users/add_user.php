@@ -15,12 +15,12 @@ if (isset($_SESSION['logged_in'])) {
    
    
    <div class=\"div-forms\"><span>ADD UDER</span><br /><br />
-    <form action=\"/users/includes/add_user.inc.php\" method=\"POST\">
+    <form>
         <br />
-        <input type=\"text\" name=\"emailuser\" value=\"\" placeholder=\"Email/Username\"><br /><br />
-        <input type=\"password\" name=\"pwd\" value=\"\" placeholder=\"Password\"><br /><br />
-        <input type=\"password\" name=\"confpwd\" value=\"\" placeholder=\"Confirm Password\"><br /><br />
-        <button type=\"submit\" name=\"submit\" class=\"btn\">Register</button>
+        <input type=\"text\" name=\"emailuser\" id=\"emailuser\" value=\"\" placeholder=\"Email/Username\"><br /><br />
+        <input type=\"password\" name=\"pwd\" id=\"pwd\" value=\"\" placeholder=\"Password\"><br /><br />
+        <input type=\"password\" name=\"confpwd\" id=\"confpwd\" value=\"\" placeholder=\"Confirm Password\"><br /><br />
+        <button type=\"button\" name=\"addUser\" class=\"btn\" onClick='addRecordUser()'>Register</button>
         <button type=\"button\" name=\"cancel\" class=\"btn\">Cancel</button>
     </form>
     </div><br />

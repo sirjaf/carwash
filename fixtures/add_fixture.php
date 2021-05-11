@@ -26,8 +26,6 @@ if (isset($_SESSION['logged_in'])){
         <div class=\"div-forms\"><span> ADD FIXTURE TO SEASON $season_name</span><br /><br />
         <form>
             <input type='hidden' name='season_id' id='season_id' value='$season_id' placeholder='$season_id'><br />
-
-
             <select name='continent' id='continent' onChange='getCountries(this.options[this.selectedIndex].text)'><br /><br />
                             <option>Select Continent</option>";
                             $sql = "Select id, continent from countries group by continent";

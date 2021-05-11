@@ -1,5 +1,4 @@
 // <script type="text/javascript">
-
 var mytournament_id;
 var mycountry_id;
 var myregassoc;
@@ -314,6 +313,24 @@ function updateRecordTournament() {
     type: "POST",
     url: "/tournaments/includes/update_tournament.inc.php",
     data: { tourn_id: tourn_id, country: country, tournament: tournament },
+    success: function (data) {
+      $("#info").show();
+      $("#info").html(data);
+      setTimeout(() => $("#info").hide(), 3000);
+    },
+  });
+}
+
+function addRecordUser() {
+
+  var emailuser = $("#emailuser").val();
+  var pwd = $("#pwd").val();
+  var confpwd = $("#confpwd").val();
+
+  $.ajax({
+    type: "POST",
+    url: "/users/includes/add_user.inc.php",
+    data: { emailuser: emailuser, pwd: pwd , confpwd: confpwd },
     success: function (data) {
       $("#info").show();
       $("#info").html(data);

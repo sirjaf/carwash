@@ -9,7 +9,7 @@ session_start();}
         $sql = "DELETE FROM tournaments where id=". (int)$_POST['id'];
         $result = mysqli_query($conn,$sql);
         echo getMessageDeleted("Tournament Deleted.","Delete");
-       
+        exit();
     }else {
         header("Location: /users/login.php");
     }     

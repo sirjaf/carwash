@@ -8,10 +8,11 @@
     $pwd = mysqli_real_escape_string($conn,$_POST['pwd']);
     $confpwd = mysqli_real_escape_string($conn,$_POST['confpwd']);
 
-    if (isset($_POST['submit'])) {
-        include $_SERVER['DOCUMENT_ROOT'].'/users/includes/header_page.php';
+    // if (isset($_POST['submit'])) {
+        //include $_SERVER['DOCUMENT_ROOT'].'/users/includes/header_page.php';
         if ((empty($user_email) || empty($user_hashpwd) || empty($user_confpwd)) || ($pwd != $confpwd)) {
             echo getMessageWarning("Fail to save record.Field(s) must not be empty or the record already exists ","Failed");
+            exit();
             //header("Location: ../add_user.php");
         } else {
             
@@ -20,16 +21,19 @@
             $result = mysqli_query($conn,$sql);
             if (!$result) {
                 echo getMessageWarning("Fail to save record.Field(s) must not be empty or the record already exists ","Failed");
+                exit();
                 //header("Location: ../add_user.php");
             } else {
                 getMessageSuccess("Successfully Added User","User Added");
+                exit();
                 //header("Location: /users/index.php");
             } 
         }  
-    } else {
-        header("Location: ../add_user.php");
-    }
+    // } else {
+    //     header("Location: ../add_user.php");
+    //     exit();
+    // }
     
 
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/users/includes/footer_page.php';?>
+<?php //include $_SERVER['DOCUMENT_ROOT'].'/users/includes/footer_page.php';?>
