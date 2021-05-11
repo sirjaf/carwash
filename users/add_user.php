@@ -21,7 +21,7 @@ if (isset($_SESSION['logged_in'])) {
         <input type=\"password\" name=\"pwd\" id=\"pwd\" value=\"\" placeholder=\"Password\"><br /><br />
         <input type=\"password\" name=\"confpwd\" id=\"confpwd\" value=\"\" placeholder=\"Confirm Password\"><br /><br />
         <button type=\"button\" name=\"addUser\" class=\"btn\" onClick='addRecordUser()'>Register</button>
-        <button type=\"button\" name=\"cancel\" class=\"btn\">Cancel</button>
+        <button type=\"reset\" name=\"reset\" class=\"btn\">Cancel</button>
     </form>
     </div><br />
     </div>";
