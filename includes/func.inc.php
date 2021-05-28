@@ -973,18 +973,21 @@ function page_generate2($mresult, $mcomp_name_title)
 function page_generate_today2($mresult, $mcomp_name_title)
 {
 
-
-
-    $rowcount = mysqli_num_rows($mresult);
-
-
-
     if (!$mresult) {
 
         die("Failed to fetch data from Database.");
         exit();
     }
 
+    if ((mysqli_num_rows($mresult) == null) || (mysqli_num_rows($mresult) == 0)){
+
+        die("Season not set or selected");
+        exit();
+    }else{
+
+        $rowcount = mysqli_num_rows($mresult);
+    }
+   
 
     echo "
 
