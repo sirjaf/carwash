@@ -966,7 +966,7 @@ function page_generate_today2($mresult, $mcomp_name_title)
 
     if (($mresult == null) || (mysqli_num_rows($mresult) == 0)){
 
-        die(getMessageDeleted("Season not set or selected","Season Selecte Error"));
+        die(getMessageDeleted("Season not set or selected","Season Select Error"));
         exit();
     }else{
 
@@ -1090,16 +1090,9 @@ function page_generate_today2($mresult, $mcomp_name_title)
 function page_generate3($mresult, $mcomp_name_title)
 {
 
-    // if (!$mresult) {
-
-    //     die("Failed to fetch data from Database.");
-    //     exit();
-    // }
-
-
     if (($mresult == null) || (mysqli_num_rows($mresult) == 0)){
 
-        die("Season not set or selected");
+        die(getMessageDeleted("Season not set or selected","Season Select Error"));
         exit();
     }else{
 

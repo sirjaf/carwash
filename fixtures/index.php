@@ -185,15 +185,7 @@ if (isset($_SESSION['logged_in'])) {
         }
     } else {
 
-        echo "<div>
-
-        <p>
-
-        You must Set Season first.
-
-        </p>
-
-    </div> <br />";
+        getMessageDeleted("Season not set or selected","Season Select Error");
     }
     include $_SERVER['DOCUMENT_ROOT'] . '/fixtures/includes/footer_page.php';
 } else {
