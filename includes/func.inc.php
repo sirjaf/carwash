@@ -247,8 +247,6 @@ function page_generate_today_dataset_2($mconn)
 
         $row = mysqli_fetch_assoc($resultSeason);
 
-        //$season_name = $row['name'];
-
         $season_id = $row['id'];
 
         $snstart = $row['snstart'];
@@ -275,9 +273,9 @@ function page_generate_today_dataset_2($mconn)
 
         $result = mysqli_query($mconn, $sql);
 
-        //echo $sql;
-
         return $result;
+    }else{
+        $resultSeason=null;
     }
 }
 
@@ -398,27 +396,15 @@ function page_generation_dataset($mconn, $mcomp_name, $mcountry_name)
 function page_generate_upcoming($mconn)
 {
 
-
-
     $today = date("Y-m-d");
-
-    // $comp_name = $mcomp_name; //name of competion
-
-    // $country_name = $mcountry_name;
 
     $sqlSeason = "Select * from seasons where active=1";
 
     $resultSeason = mysqli_query($mconn, $sqlSeason);
 
-
-
     if (mysqli_num_rows($resultSeason) == 1) {
 
-
-
         $row = mysqli_fetch_assoc($resultSeason);
-
-        //$season_name = $row['name'];
 
         $season_id = $row['id'];
 
@@ -445,10 +431,9 @@ function page_generate_upcoming($mconn)
 
 
         $result = mysqli_query($mconn, $sql);
-
-        //echo $sql;
-
         return $result;
+    }else{
+        $resultSeason = null;
     }
 }
 
@@ -973,11 +958,11 @@ function page_generate2($mresult, $mcomp_name_title)
 function page_generate_today2($mresult, $mcomp_name_title)
 {
 
-    if (!$mresult) {
+    // if (!$mresult) {
 
-        die("Failed to fetch data from Database.");
-        exit();
-    }
+    //     die("Failed to fetch data from Database.");
+    //     exit();
+    // }
 
     if ((mysqli_num_rows($mresult) == null) || (mysqli_num_rows($mresult) == 0)){
 
@@ -1105,22 +1090,21 @@ function page_generate_today2($mresult, $mcomp_name_title)
 function page_generate3($mresult, $mcomp_name_title)
 {
 
+    // if (!$mresult) {
+
+    //     die("Failed to fetch data from Database.");
+    //     exit();
+    // }
 
 
-    $rowcount = mysqli_num_rows($mresult);
+    if ((mysqli_num_rows($mresult) == null) || (mysqli_num_rows($mresult) == 0)){
 
+        die("Season not set or selected");
+        exit();
+    }else{
 
-
-    if (!$mresult) {
-
-        die("Failed to fetch data from Database.");
+        $rowcount = mysqli_num_rows($mresult);
     }
-
-
-
-    //header("Location: ../add_team.php?team=success");
-
-    //exit();
 
     $myDateTracker = "";
 
