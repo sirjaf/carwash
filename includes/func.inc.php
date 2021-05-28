@@ -982,6 +982,7 @@ function page_generate_today2($mresult, $mcomp_name_title)
     if (!$mresult) {
 
         die("Failed to fetch data from Database.");
+        exit();
     }
 
 
