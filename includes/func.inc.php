@@ -964,7 +964,7 @@ function page_generate_today2($mresult, $mcomp_name_title)
     //     exit();
     // }
 
-    if ((mysqli_num_rows($mresult) == null) || (mysqli_num_rows($mresult) == 0)){
+    if (($mresult == null) || (mysqli_num_rows($mresult) == 0)){
 
         die("Season not set or selected");
         exit();
@@ -1097,7 +1097,7 @@ function page_generate3($mresult, $mcomp_name_title)
     // }
 
 
-    if ((mysqli_num_rows($mresult) == null) || (mysqli_num_rows($mresult) == 0)){
+    if (($mresult == null) || (mysqli_num_rows($mresult) == 0)){
 
         die("Season not set or selected");
         exit();
