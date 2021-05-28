@@ -966,7 +966,7 @@ function page_generate_today2($mresult, $mcomp_name_title)
 
     if (($mresult == null) || (mysqli_num_rows($mresult) == 0)){
 
-        die("Season not set or selected");
+        die(getMessageDeleted("Season not set or selected","Season Selecte Error"));
         exit();
     }else{
 
