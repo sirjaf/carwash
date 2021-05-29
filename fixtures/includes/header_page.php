@@ -3,9 +3,13 @@ if (session_id()=='') {
 session_start();}
 include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
     echo "
+    <!DOCTYPE HTML>
     <html>
-    <head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
+    <head>
+        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
          <meta name=\"viewport\" content=\"width=device-width\">
+         <meta name=\"description\" content=\"Fixtures|Admin Section\"/>
+         <link rel=\"icon\" type=\"image/ico\" href=\"/images/icons/icon-72x72.png\">
         <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/pushbar.css\">
         <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/demo.css\">
         <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/main.css\">
@@ -17,7 +21,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/includes/func.inc.php';
         <script type='text/javascript' src='/js/menu.js'></script>
         <script type='text/javascript' src='/js/admin.js'></script>
         <script type='text/javascript' src='/js/pushbar.js'></script>
-        
+        <title>Dawaki Viewing Center | Fixtures|Admin Section</title>
     </head>
     <body>
         

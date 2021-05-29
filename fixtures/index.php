@@ -53,7 +53,6 @@ if (isset($_SESSION['logged_in'])) {
         if (!$result) {
 
             echo $sql;
-
             die(getMessageDeleted("Failed to connecte to database","Database Connection Error"));
         } else {
 
