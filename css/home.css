@@ -354,7 +354,7 @@ form {
 
 span {
     display: inline;
-    font-size: 14px;
+    font-size: 1em;
     font-weight: bold;
     color: white;
     background-color: black;
@@ -369,7 +369,7 @@ span {
 }
 .myspan {
     font-weight: normal;
-    font-size: 12px;
+    font-size: 1em;
     
 }
 
