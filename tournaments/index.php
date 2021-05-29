@@ -31,7 +31,7 @@ $url = "/tournaments/delete_tournament.php";
         $result = mysqli_query($conn,$sql);
 
         if (!$result) {
-            die("Failed to fetch data from Database.");
+            die(getMessageDeleted("Failed to connecte to database","Database Connection Error"));
         } else {
                 
             echo " 

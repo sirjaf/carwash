@@ -25,7 +25,7 @@ if (isset($_SESSION['logged_in'])) {
     $result = mysqli_query($conn,$sql);
 
     if (!$result) {
-        die("Failed to Fetch Emails/Users to Database.");
+        die(getMessageDeleted("Failed to connecte to database","Database Connection Error"));
     } else {
         echo " 
         <div id =\"info\"></div>

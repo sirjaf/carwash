@@ -47,7 +47,8 @@ if (isset($_SESSION['logged_in'])) {
 
     if (!$result) {
 
-        die("Failed to Fetch Teams to Database.");
+        die(getMessageDeleted("Failed to connecte to database","Database Connection Error"));
+        exit();
 
     } else {
 

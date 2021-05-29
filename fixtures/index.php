@@ -54,7 +54,7 @@ if (isset($_SESSION['logged_in'])) {
 
             echo $sql;
 
-            die("Failed to fetch records to Database.");
+            die(getMessageDeleted("Failed to connecte to database","Database Connection Error"));
         } else {
 
 
