@@ -250,6 +250,22 @@ form {
   background-color: #d50000;
 }
 
+#messageinformation {
+  align-items: center;
+  border: 1px solid #1393dd;
+  color: white;
+  overflow: auto;
+  overflow: hidden;
+}
+
+#messageinformation p{
+
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+
+}
+
 #messagesuccess {
   align-items: center;
   border: 1px solid #00c853;
@@ -261,6 +277,8 @@ form {
 #messagesuccess p {
   color: black;
   font-size: 12px;
+  font-weight: bold;
+
 }
 
 #messagedeleted {
@@ -274,6 +292,12 @@ form {
 #messagedeleted p {
   color: black;
   font-size: 12px;
+  font-weight: bold;
+
+}
+
+.titleinformation  {
+  background-color: #1393dd;
 }
 
 .titlesuccess  {

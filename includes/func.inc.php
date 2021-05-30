@@ -728,6 +728,21 @@ function getMessageWarning($mMessage, $mTitle)
 }
 
 
+function getMessageInformation($mMessage, $mTitle)
+{
+
+
+
+    echo "<br /><span class=\"titleinformation\">$mTitle</span>
+
+    <div id=\"messageinformation\" align=\"center\">
+
+          <p>$mMessage</p>
+
+          
+
+        </div><br />";
+}
 
 function getMessageSuccess($mMessage, $mTitle)
 {
@@ -958,23 +973,19 @@ function page_generate2($mresult, $mcomp_name_title)
 function page_generate_today2($mresult, $mcomp_name_title)
 {
 
-    // if (!$mresult) {
-
-    //     die("Failed to fetch data from Database.");
-    //     exit();
-    // }
-
-    if (($mresult == null) || (mysqli_num_rows($mresult) == 0)){
+  
+    if ($mresult == null ){
 
         die(getMessageDeleted("Season not set or selected","Season Select Error"));
-        exit();
+        
+    }elseif(mysqli_num_rows($mresult) == 0){
+
+      echo(getMessageSuccess("No Fixture(s) for Today","No Fixtures(s)"));
+       // echo "<div>No Fixture(s) for Today</div><br /><br />";
+
     }else{
 
-        $rowcount = mysqli_num_rows($mresult);
-    }
-   
-
-    echo "
+        echo "
 
             <div class=\"leagues\"> <h1><span>$mcomp_name_title</span></h1>
 
@@ -1076,11 +1087,8 @@ function page_generate_today2($mresult, $mcomp_name_title)
             </div><br />";
 
 
-
-    if ($rowcount == 0) {
-
-        echo "<div>No Fixture(s) for Today</div><br /><br />";
     }
+   
 }
 
 
@@ -1089,17 +1097,17 @@ function page_generate_today2($mresult, $mcomp_name_title)
 
 function page_generate3($mresult, $mcomp_name_title)
 {
-
-    if (($mresult == null) || (mysqli_num_rows($mresult) == 0)){
-
+    if ($mresult == null){
         die(getMessageDeleted("Season not set or selected","Season Select Error"));
-        exit();
+    
+    }elseif(mysqli_num_rows($mresult)==0){
+
+        echo (getMessageSuccess("No Upcoming Fixture(s)","No Fixtures"));
+
+        //$rowcount = mysqli_num_rows($mresult);
     }else{
 
-        $rowcount = mysqli_num_rows($mresult);
-    }
-
-    $myDateTracker = "";
+        $myDateTracker = "";
 
     echo "
 
@@ -1209,12 +1217,9 @@ function page_generate3($mresult, $mcomp_name_title)
 
             </div>";
 
-
-
-    if ($rowcount == 0) {
-
-        echo "<div>No Upcoming Fixture(s)</div><br /><br />";
     }
+
+
 }
 
 
