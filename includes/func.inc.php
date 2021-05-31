@@ -749,7 +749,7 @@ function getMessageSuccess($mMessage, $mTitle)
 
 
 
-    echo "<br /><span class=\"titlesuccess\">$mTitle</span>
+    return "<br /><span class=\"titlesuccess\">$mTitle</span>
 
     <div id=\"messagesuccess\" align=\"center\">
 
@@ -980,8 +980,12 @@ function page_generate_today2($mresult, $mcomp_name_title)
         
     }elseif(mysqli_num_rows($mresult) == 0){
 
-      echo(getMessageSuccess("No Fixture(s) for Today","No Fixtures(s)"));
-       // echo "<div>No Fixture(s) for Today</div><br /><br />";
+      echo(
+          "<div class=\"leagues\"> 
+            <h1><span>$mcomp_name_title</span></h1>"
+                .getMessageSuccess("No Fixture(s) for Today","No Fixtures(s)").
+            "</div>");
+
 
     }else{
 
@@ -1102,9 +1106,11 @@ function page_generate3($mresult, $mcomp_name_title)
     
     }elseif(mysqli_num_rows($mresult)==0){
 
-        echo (getMessageSuccess("No Upcoming Fixture(s)","No Fixtures"));
+        echo(
+            "<div class=\"leagues\"> <h1><span>$mcomp_name_title</span></h1>"
+                  .getMessageSuccess("No Upcoming Fixture(s)","No Fixtures").
+              "</div>");
 
-        //$rowcount = mysqli_num_rows($mresult);
     }else{
 
         $myDateTracker = "";
